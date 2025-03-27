@@ -1,3 +1,4 @@
+import 'package:ccw/screens/desktop/about_us_screen.dart';
 import 'package:ccw/screens/desktop/dhome_screen.dart';
 import 'package:ccw/screens/desktop/test.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
       debugShowCheckedModeBanner: false,
       title: 'ccw',
       theme: ThemeData(
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: const DhomeScreen(),
+      home: const DaboutUsScreen(),
     );
   }
 }

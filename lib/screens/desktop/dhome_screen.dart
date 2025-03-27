@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:ccw/constans/my_color.dart';
 import 'package:ccw/widgets/app_bar.dart';
+import 'package:ccw/widgets/footer.dart';
 import 'package:ccw/widgets/home_three_container.dart';
 import 'package:ccw/widgets/who_we_help.dart';
 import 'package:ccw/widgets/why_choose_ccw.dart';
@@ -32,7 +33,7 @@ class _DhomeScreenState extends State<DhomeScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(
-              height: 1000,
+              height: size.width / 1.7,
 
               //! image for backGround from group of people with appBar above and text and button and 3 container
               child: Stack(
@@ -47,38 +48,61 @@ class _DhomeScreenState extends State<DhomeScreen> {
                     top: 0,
                     child: MyAppbar(
                       size: size,
+                      homeStyle: TextStyle(
+                          decoration: TextDecoration.underline,
+                          decorationThickness: 1,
+                          decorationColor: MyColor.primary,
+                          fontSize: size.width/90,
+                          color: MyColor.primary,
+                          fontWeight: FontWeight.w200),
+                      aboutStyle: TextStyle(
+                          fontSize: size.width/90,
+                          color: MyColor.white,
+                          fontWeight: FontWeight.w200),
+                      servicesStyle: TextStyle(
+                          fontSize: size.width/90,
+                          color: MyColor.white,
+                          fontWeight: FontWeight.w200),
+                      resourcesStyle: TextStyle(
+                          fontSize: size.width/90,
+                          color: MyColor.white,
+                          fontWeight: FontWeight.w200),
+                      contactStyle: TextStyle(
+                          fontSize: size.width/90,
+                          color: MyColor.white,
+                          fontWeight: FontWeight.w200),
                     ),
                   ),
                   Positioned(
-                    top: 196,
+                    top: size.width/7.34,
                     child: Column(
                       children: [
                         Text(
                           'Financial Clarity , Trusted Guidance',
                           style: TextStyle(
-                              fontSize: 48,
+                              fontSize: size.width/30,
                               color: MyColor.white,
                               fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(height: 25),
+                        SizedBox(height: size.width/57.6),
                         SizedBox(
                             width: size.width / 2.29,
                             child: Text(
                               textAlign: TextAlign.center,
                               'Helping business owners streamline accounting, optimize tax strategies, and stay compliant- so you can focus on what you do best',
                               style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: size.width/72,
                                   color: MyColor.white,
                                   fontWeight: FontWeight.w200),
                             )),
-                        SizedBox(height: 28),
+                        SizedBox(height: size.width/51.42),
                         Row(
-                          spacing: 25,
+                          spacing: size.width/57.6,
                           children: [
                             Container(
                                 alignment: Alignment.center,
-                                height: 56,
-                                width: 196,
+                                height: size.width/25.71,
+                                width: size.width /7.34,
                                 decoration: BoxDecoration(
                                     border: Border.all(
                                         color: MyColor.white, width: 2),
@@ -87,13 +111,13 @@ class _DhomeScreenState extends State<DhomeScreen> {
                                   'Get Started Today',
                                   style: TextStyle(
                                       color: MyColor.white,
-                                      fontSize: 18,
+                                      fontSize: size.width/80,
                                       fontWeight: FontWeight.bold),
                                 )),
                             Container(
                                 alignment: Alignment.center,
-                                height: 56,
-                                width: 196,
+                                height: size.width/25.71,
+                                width: size.width /7.34,
                                 decoration: BoxDecoration(
                                     gradient: LinearGradient(
                                         begin: Alignment.centerLeft,
@@ -104,13 +128,13 @@ class _DhomeScreenState extends State<DhomeScreen> {
                                   'Read our Story',
                                   style: TextStyle(
                                       color: MyColor.white,
-                                      fontSize: 18,
+                                      fontSize: size.width/80,
                                       fontWeight: FontWeight.bold),
                                 )),
                             Container(
                                 alignment: Alignment.center,
-                                height: 56,
-                                width: 196,
+                                height: size.width/25.71,
+                                width: size.width /7.34,
                                 decoration: BoxDecoration(
                                     border: Border.all(
                                         color: MyColor.white, width: 2),
@@ -119,7 +143,7 @@ class _DhomeScreenState extends State<DhomeScreen> {
                                   'See How We Help',
                                   style: TextStyle(
                                       color: MyColor.white,
-                                      fontSize: 18,
+                                      fontSize: size.width /80,
                                       fontWeight: FontWeight.bold),
                                 )),
                           ],
@@ -127,18 +151,15 @@ class _DhomeScreenState extends State<DhomeScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 50,
-                  ),
 
                   //* 3 container with icon and title and description
                   Positioned(
-                      top: 515,
+                      top: size.width /2.8,
                       child: Wrap(
                         crossAxisAlignment: WrapCrossAlignment.center,
                         runAlignment: WrapAlignment.center,
                         alignment: WrapAlignment.center,
-                        spacing: 19,
+                        spacing: size.width/90,
                         children: [
                           ThreeContainer(
                             title: 'Smooth Connectivity',
@@ -199,36 +220,38 @@ class _DhomeScreenState extends State<DhomeScreen> {
                 ],
               ),
             ),
-
+            SizedBox(
+              height: size.width/7.2,
+            ),
             //! wrap number one with 5 container and animation with shimmer have icon, title and description
             Text(
               textAlign: TextAlign.center,
               'Who We Help',
               style: TextStyle(
-                  fontSize: 36,
+                  fontSize: size.width / 40,
                   color: MyColor.secendry,
                   fontWeight: FontWeight.w600),
             ),
             SizedBox(
-              height: 18,
+              height: size.width/80,
             ),
             Text(
               textAlign: TextAlign.center,
               'At CCW CPA, we specialize in providing expert accounting and tax services for:',
               style: TextStyle(
-                  fontSize: 18,
+                  fontSize: size.width/80,
                   color: MyColor.white,
                   fontWeight: FontWeight.w400),
             ),
             SizedBox(
-              height: 109,
+              height: size.width/13.21,
             ),
             SizedBox(
-              height: 900,
+              height: size.width/1.6,
               width: size.width / 1,
               child: Wrap(
-                spacing: 250,
-                runSpacing: 62,
+                spacing: size.width/5.76,
+                runSpacing: size.width/23.22,
                 direction: Axis.horizontal,
                 crossAxisAlignment: WrapCrossAlignment.center,
                 runAlignment: WrapAlignment.center,
@@ -298,26 +321,26 @@ class _DhomeScreenState extends State<DhomeScreen> {
               ),
             ),
             SizedBox(
-              height: 127,
+              height: size.width/11.33,
             ),
 
             //! wrap number two with 4 container and animation with shimmer have icon, title and description
             Text(
               'Why Choose CCW',
               style: TextStyle(
-                  fontSize: 36,
+                  fontSize: size.width/40,
                   color: MyColor.secendry,
                   fontWeight: FontWeight.w600),
             ),
             SizedBox(
-              height: 72,
+              height:  size.width/20,
             ),
             Wrap(
               alignment: WrapAlignment.center,
               crossAxisAlignment: WrapCrossAlignment.center,
               runAlignment: WrapAlignment.center,
-              runSpacing: 80,
-              spacing: 45,
+              runSpacing: size.width /18,
+              spacing: size.width /32,
               children: List.generate(
                 4,
                 (index) {
@@ -375,7 +398,7 @@ class _DhomeScreenState extends State<DhomeScreen> {
               ),
             ),
             SizedBox(
-              height: 164,
+              height: size.width/8.78,
             ),
             //! footer with logo and map
             Divider(
@@ -385,166 +408,32 @@ class _DhomeScreenState extends State<DhomeScreen> {
               endIndent: size.width / 10,
             ),
             SizedBox(
-              height: 119,
+              height: size.width/12.1,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Image.asset(
-                      'assets/images/ccwLogo.png',
-                      height: 28,
-                    ),
-                    const SizedBox(
-                      height: 28,
-                    ),
-                    SizedBox(
-                      width: 160,
-                      child: Text(
-                        'Build by aradazr.dev, All Rights Reserved',
-                        style: TextStyle(
-                          color: MyColor.white,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 32,
-                    ),
-                    Row(
-                      spacing: 6,
-                      children: [
-                        Container(
-                          height: 42,
-                          width: 42,
-                          decoration: BoxDecoration(
-                            color: Colors.greenAccent,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                        Container(
-                          height: 42,
-                          width: 42,
-                          decoration: BoxDecoration(
-                            color: Colors.greenAccent,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                        Container(
-                          height: 42,
-                          width: 42,
-                          decoration: BoxDecoration(
-                            color: Colors.greenAccent,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                        Container(
-                          height: 42,
-                          width: 42,
-                          decoration: BoxDecoration(
-                            color: Colors.greenAccent,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  width: size.width / 10,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'More',
-                      style: TextStyle(
-                          color: MyColor.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w900),
-                    ),
-                    SizedBox(
-                      height: 31,
-                    ),
-                    Text(
-                      'Documentation',
-                      style: TextStyle(
-                          color: MyColor.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal),
-                    ),
-                    SizedBox(
-                      height: 24,
-                    ),
-                    Text(
-                      'License',
-                      style: TextStyle(
-                          color: MyColor.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal),
-                    ),
-                    SizedBox(
-                      height: 24,
-                    ),
-                    Text(
-                      'Changelog',
-                      style: TextStyle(
-                          color: MyColor.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal),
-                    ),
-                  ],
-                ),
-                  ],
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('See us on Google Map:',
-                        style: TextStyle(
-                          color: MyColor.white,
-                          fontSize: 16,
-                        )),
-                    SizedBox(
-                      height: 2,
-                    ),
-                    Image.asset(
-                      'assets/images/map.png',
-                      height: size.height / 2.8,
-                    )
-                  ],
-                )
-              ],
-            ),
+            Footer(size: size),
             SizedBox(
-              height: 73,
+              height: size.width/19.72,
             ),
             Container(
-              height: 59,
-              width: 59,
+              height: size.width/24.40,
+              width: size.width/24.40,
               decoration: BoxDecoration(
                 color: Colors.amber,
                 shape: BoxShape.circle,
               ),
             ),
             SizedBox(
-              height: 24,
+              height: size.width/60,
             ),
             Text(
               'Copyright © 2019. Crafted with love.',
               style: TextStyle(
                 color: MyColor.white,
-                fontSize: 16,
+                fontSize: size.width/90,
               ),
             ),
             SizedBox(
-              height: 103,
+              height: size.width/13.98,
             )
           ],
         ),

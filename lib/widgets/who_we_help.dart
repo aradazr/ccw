@@ -21,29 +21,29 @@ class WhoWeHelp extends StatelessWidget {
       children: [
         Container(
           alignment: Alignment.center,
-          height: 64,
-          width: 64,
+          height: size.width/24,
+          width: size.width/24,
           decoration: BoxDecoration(
             color: Color(0xff010B06),
             borderRadius: BorderRadius.circular(16),
           ),
           child: Image.asset(
             image,
-            height: 44,
+            height: size.width/32.72,
           ),
         ),
         SizedBox(
-          height: 32,
+          height: size.width/45,
         ),
         Text(
           title,
           style: TextStyle(
-              fontSize: 20,
+              fontSize: size.width/72,
               color: MyColor.white,
               fontWeight: FontWeight.bold),
         ),
         SizedBox(
-          height: 16,
+          height: size.width/90,
         ),
         SizedBox(
             width: size.width / 3.8,
@@ -51,7 +51,7 @@ class WhoWeHelp extends StatelessWidget {
               textAlign: TextAlign.center,
               description,
               style: TextStyle(
-                  fontSize: 16,
+                  fontSize: size.width/90,
                   color: MyColor.grey,
                   fontWeight: FontWeight.normal),
             )),
