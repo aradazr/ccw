@@ -401,40 +401,9 @@ class _DhomeScreenState extends State<DhomeScreen> {
               height: size.width/8.78,
             ),
             //! footer with logo and map
-            Divider(
-              indent: size.width / 10,
-              thickness: 1,
-              color: MyColor.white,
-              endIndent: size.width / 10,
-            ),
-            SizedBox(
-              height: size.width/12.1,
-            ),
+            
             Footer(size: size),
-            SizedBox(
-              height: size.width/19.72,
-            ),
-            Container(
-              height: size.width/24.40,
-              width: size.width/24.40,
-              decoration: BoxDecoration(
-                color: Colors.amber,
-                shape: BoxShape.circle,
-              ),
-            ),
-            SizedBox(
-              height: size.width/60,
-            ),
-            Text(
-              'Copyright © 2019. Crafted with love.',
-              style: TextStyle(
-                color: MyColor.white,
-                fontSize: size.width/90,
-              ),
-            ),
-            SizedBox(
-              height: size.width/13.98,
-            )
+            
           ],
         ),
       ),

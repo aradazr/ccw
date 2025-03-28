@@ -1,14 +1,92 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:ccw/constans/my_color.dart';
 import 'package:ccw/widgets/app_bar.dart';
+import 'package:ccw/widgets/core_values.dart';
+import 'package:ccw/widgets/footer.dart';
 import 'package:ccw/widgets/our_firm_and_other.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
-class DaboutUsScreen extends StatelessWidget {
+class DaboutUsScreen extends StatefulWidget {
   const DaboutUsScreen({super.key});
+
+  @override
+  State<DaboutUsScreen> createState() => _DaboutUsScreenState();
+}
+
+class _DaboutUsScreenState extends State<DaboutUsScreen> {
+  bool isAnimated = false;
+  bool isAnimated2 = false;
+  bool _isVisible = false;
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    List<Widget> column = [
+      OurFirmAndOther(
+        size: size,
+        title: 'Our Firm',
+        description:
+            'CCW CPA is a professional accounting firm with a reputation for excellence. Under the leadership of Parham Alizadehkia, CPA, our firm continues to build on a strong foundation, ensuring seamless transitions and continuity of service...',
+        image: 'assets/images/ourFirm.png',
+        colors: [Color(0xFF0E0E0E), const Color(0xFF0E2E2E)],
+      ),
+      SizedBox(
+        height: size.height / 49.65,
+      ),
+      OurFirmAndOther(
+        size: size,
+        title: 'Our Mission',
+        description:
+            'Our mission is to empower businesses and individuals with trusted financial guidance, expert accounting services, and personalized tax strategies. We are committed to delivering solutions that help our clients achieve their financial goals while maintaining the...',
+        image: 'assets/images/ourFirm.png',
+        colors: [Color(0xFF0E0E0E), const Color(0xFF221B0D)],
+      ),
+      SizedBox(
+        height: size.height / 49.65,
+      ),
+      OurFirmAndOther(
+        size: size,
+        title: 'Our Vision',
+        description:
+            'Our mission is to empower businesses and individuals with trusted financial guidance, expert accounting services, and personalized tax strategies. We are committed to delivering solutions that help our clients achieve their financial goals while maintaining the...',
+        image: 'assets/images/ourFirm.png',
+        colors: [Color(0xFF0E0E0E), const Color(0xFF1F272B)],
+      ),
+    ];
+
+    List<Widget> wrap = [
+      CoreValues(
+        size: size,
+        title: 'Our Vision',
+        description:
+            'We uphold the highest ethical standards, ensuring transparency and honesty in everything we do.',
+        image: 'assets/images/eyeIcon.png',
+      ),
+      CoreValues(
+        size: size,
+        title: 'Client-Focused',
+        description:
+            'Every client’s success is our priority, and we tailor our services to their unique financial landscape.',
+        image: 'assets/images/clientFocused.png',
+      ),
+      CoreValues(
+        size: size,
+        title: 'Excellence',
+        description:
+            'We embrace technology and continuous learning to provide the best solutions for our clients.',
+        image: 'assets/images/excellence.png',
+      ),
+      CoreValues(
+        size: size,
+        title: 'Leadership',
+        description:
+            'We foster a strong team environment and mentor the next generation of financial professionals.',
+        image: 'assets/images/leadership.png',
+      ),
+    ];
+
     return Scaffold(
       backgroundColor: MyColor.backGround,
       body: SingleChildScrollView(
@@ -100,13 +178,20 @@ class DaboutUsScreen extends StatelessWidget {
                         ),
                         SizedBox(
                           width: size.width / 3.14,
-                          child: Text(
-                            'Our team is made up of experienced CPAs who are dedicated to helping clients achieve financial clarity and success. We take a collaborative approach to problem-solving, ensuring that every client benefits from our collective expertise.',
-                            style: TextStyle(
-                                height: 1.9,
-                                fontSize: size.width / 80,
-                                color: MyColor.white,
-                                fontWeight: FontWeight.w100),
+                          child: AnimatedTextKit(
+                            isRepeatingAnimation: false,
+                            displayFullTextOnTap: true,
+                            animatedTexts: [
+                              TypewriterAnimatedText(
+                                cursor: '',
+                                'Our team is made up of experienced CPAs who are dedicated to helping clients achieve financial clarity and success. We take a collaborative approach to problem-solving, ensuring that every client benefits from our collective expertise.',
+                                textStyle: TextStyle(
+                                    height: 1.9,
+                                    fontSize: size.width / 80,
+                                    color: MyColor.white,
+                                    fontWeight: FontWeight.w100),
+                              ),
+                            ],
                           ),
                         ),
                         SizedBox(
@@ -222,53 +307,120 @@ class DaboutUsScreen extends StatelessWidget {
                 ),
                 SizedBox(
                   width: size.width / 3.1,
-                  child: Text(
-                      'At CCW CPA, we are more than just accountants—we are strategic partners dedicated to your financial success. With decades of experience in tax, accounting, and business advisory services, we help individuals and businesses navigate the complexities of financial management with clarity and confidence.As a firm built on trust, expertise, and innovation, we prioritize personalized service, ensuring that every client receives solutions tailored to their specific needs. Whether you’re a business owner seeking tax optimization, an investor looking for strategic planning, or an individual in need of financial guidance, we are here to help you make informed decisions with confidence.',
-                      style: TextStyle(
-                        fontSize: size.width / 100.488,
-                        color: MyColor.white,
-                        fontWeight: FontWeight.w100,
-                      )),
+                  child: AnimatedTextKit(
+                    repeatForever: false,
+                    isRepeatingAnimation: false,
+                    displayFullTextOnTap: true,
+                    animatedTexts: [
+                      TypewriterAnimatedText(
+                        cursor: '',
+                        speed: Duration(milliseconds: 20),
+                          'At CCW CPA, we are more than just accountants—we are strategic partners dedicated to your financial success. With decades of experience in tax, accounting, and business advisory services, we help individuals and businesses navigate the complexities of financial management with clarity and confidence.As a firm built on trust, expertise, and innovation, we prioritize personalized service, ensuring that every client receives solutions tailored to their specific needs. Whether you’re a business owner seeking tax optimization, an investor looking for strategic planning, or an individual in need of financial guidance, we are here to help you make informed decisions with confidence.',
+                          textStyle: TextStyle(
+                            fontSize: size.width / 100.488,
+                            color: MyColor.white,
+                            fontWeight: FontWeight.w100,
+                          )),
+                    ],
+                  ),
                 )
               ],
             ),
             SizedBox(
               height: size.width / 23.51,
             ),
-            Image.asset('assets/images/space.png',
-                width: size.width / 1.188,
-                height: size.width / 2.23,
-                fit: BoxFit.cover),
+            VisibilityDetector(
+      key: const Key('animated-image'),
+      onVisibilityChanged: (visibilityInfo) {
+        if (visibilityInfo.visibleFraction > 0.2 && !_isVisible) {
+          setState(() {
+            _isVisible = true;
+          });
+        }
+      },
+      child: AnimatedOpacity(
+        duration: const Duration(milliseconds: 800),
+        opacity: _isVisible ? 1.0 : 0.0,
+        child: AnimatedScale(
+          duration: const Duration(milliseconds: 800),
+          scale: _isVisible ? 1.0 : 0.8,
+          child: Image.asset(
+            'assets/images/space.png',
+            width: size.width / 1.188,
+            height: size.width / 2.23,
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+    ),
             SizedBox(
               height: size.width / 9.05,
             ),
-            Column(
-              children: [
-                OurFirmAndOther(
-                  size: size,
-                  title: 'Our Firm',
-                  description: 'CCW CPA is a professional accounting firm with a reputation for excellence. Under the leadership of Parham Alizadehkia, CPA, our firm continues to build on a strong foundation, ensuring seamless transitions and continuity of service...',
-                  image: 'assets/images/ourFirm.png',
-                  colors: [ Color(0xFF0E0E0E), const Color(0xFF0E2E2E)],
+            VisibilityDetector(
+              key: Key('column-animation'),
+              onVisibilityChanged: (VisibilityInfo info) {
+                if (info.visibleFraction > 0.1 && !isAnimated) {
+                  setState(() {
+                    isAnimated = true; // وقتی ویجت دیده شد، انیمیشن اجرا شود
+                  });
+                }
+              },
+              child: Column(
+                children: List.generate(
+                  column.length,
+                  (index) {
+                    return column[index]
+                        .animate(target: isAnimated ? 1 : 0)
+                        .fade(
+                            duration: 500.ms,
+                            delay: (index * 400)
+                                .ms) // هر آیتم 300 میلی‌ثانیه تأخیر دارد
+                        .slideY(
+                          begin: 1,
+                          end: 0,
+                          duration: 500.ms,
+                          curve: Curves.easeOut,
+                        )
+                        .shimmer(delay: 800.ms, duration: 1500.ms);
+                  },
                 ),
-                SizedBox(height: size.height / 49.65,),
-                OurFirmAndOther(
-                  size: size,
-                  title: 'Our Misson',
-                  description: 'Our mission is to empower businesses and individuals with trusted financial guidance, expert accounting services, and personalized tax strategies. We are committed to delivering solutions that help our clients achieve their financial goals while maintaining the...',
-                  image: 'assets/images/ourFirm.png',
-                  colors: [Color(0xFF0E0E0E), const Color(0xFF221B0D)],
-                ),
-                SizedBox(height: size.height / 49.65,),
-                OurFirmAndOther(
-                  size: size,
-                  title: 'Our Vision',
-                  description: 'We strive to be the premier CPA firm, recognized for driving financial success and growth for our clients. By continually innovating and evolving our services, we ensure that businesses and individuals receive forward-thinking, ethical, and expert financial advice tailored to their needs.',
-                  image: 'assets/images/ourFirm.png',
-                  colors: [Color(0xFF0E0E0E), const Color(0xFF1F272B)],
-                ),
-              ],
+              ),
             ),
+            SizedBox(
+              height: size.width / 10.6,
+            ),
+            VisibilityDetector(
+              key: Key('wrap-animation'),
+              onVisibilityChanged: (VisibilityInfo info) {
+                if (info.visibleFraction > 0.2 && !isAnimated2) {
+                  setState(() {
+                    isAnimated2 = true; // وقتی ویجت دیده شد، انیمیشن اجرا شود
+                  });
+                }
+              },
+              child: Wrap(
+                runSpacing: size.width / 30,
+                spacing: size.width / 30,
+                children: List.generate(wrap.length, (index) {
+                  return wrap[index]
+                      .animate(target: isAnimated2 ? 1 : 0)
+                      .fade(
+                          duration: 400.ms,
+                          delay: (index * 300)
+                              .ms) // هر آیتم 300 میلی‌ثانیه تأخیر دارد
+                      .slideX(
+                          begin: 0.3,
+                          end: 0,
+                          duration: 500.ms,
+                          curve: Curves.easeOut)
+                      .shimmer(delay: 600.ms, duration: 1500.ms);
+                }),
+              ),
+            ),
+            SizedBox(
+              height: size.width / 9.17,
+            ),
+            Footer(size: size)
           ],
         ),
       ),
