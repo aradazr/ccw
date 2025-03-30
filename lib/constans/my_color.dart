@@ -3,6 +3,7 @@ import 'dart:ui';
 class MyColor {
   static const Color primary = Color(0xFFE3C985);
   static const Color secendry = Color(0xFF10BC69);
+  static const Color subTitle = Color(0xFF7AC8A3);
   static const Color white = Color(0xFFFFFFFF);
   static const Color grey = Color(0xFFD2CBCB);
   static const Color cartColor = Color(0xFF222B2F);
