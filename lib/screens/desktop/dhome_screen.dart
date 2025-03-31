@@ -1,11 +1,11 @@
 import 'dart:math';
 
 import 'package:ccw/constans/my_color.dart';
-import 'package:ccw/widgets/app_bar.dart';
-import 'package:ccw/widgets/footer.dart';
-import 'package:ccw/widgets/home_three_container.dart';
-import 'package:ccw/widgets/who_we_help.dart';
-import 'package:ccw/widgets/why_choose_ccw.dart';
+import 'package:ccw/widgets/desktop/app_bar.dart';
+import 'package:ccw/widgets/desktop/footer.dart';
+import 'package:ccw/widgets/desktop/home_three_container.dart';
+import 'package:ccw/widgets/desktop/who_we_help.dart';
+import 'package:ccw/widgets/desktop/why_choose_ccw.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:visibility_detector/visibility_detector.dart';

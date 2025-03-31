@@ -1,5 +1,5 @@
 import 'package:ccw/constans/my_color.dart';
-import 'package:ccw/widgets/meet_our_team.dart';
+import 'package:ccw/widgets/desktop/meet_our_team.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 

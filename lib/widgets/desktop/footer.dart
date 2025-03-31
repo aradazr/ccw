@@ -1,4 +1,5 @@
 import 'package:ccw/constans/my_color.dart';
+import 'package:ccw/constans/responsive_utiles.dart';
 import 'package:flutter/material.dart';
 
 class Footer extends StatelessWidget {
@@ -171,8 +172,16 @@ class Footer extends StatelessWidget {
               height: size.width/24.40,
               width: size.width/24.40,
               decoration: BoxDecoration(
-                color: Colors.amber,
+                gradient: LinearGradient(colors: [
+                  Color(0xff000000),
+                  Color(0xff081A1A),
+                ]),
                 shape: BoxShape.circle,
+              ),
+              child: Image.asset('assets/images/cLogo.png',
+              height: ResponsiveMobileUtils.getResponsiveSize(context, 19),
+              width: ResponsiveMobileUtils.getResponsiveSize(context, 14.74),
+              fit: BoxFit.cover,
               ),
             ),
             SizedBox(

@@ -1,6 +1,7 @@
 import 'package:ccw/screens/desktop/dabout_us_screen.dart';
 import 'package:ccw/screens/desktop/meet_our_experts.dart';
 import 'package:ccw/screens/desktop/test.dart';
+import 'package:ccw/screens/mobile/mhome_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: const DmeetOurExperts(),
+      home: const MhomeScreen(),
     );
   }
 }

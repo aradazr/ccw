@@ -1,5 +1,5 @@
 import 'package:ccw/constans/my_color.dart';
-import 'package:ccw/widgets/core_values.dart';
+import 'package:ccw/widgets/desktop/core_values.dart';
 import 'package:flutter/material.dart';
 
 class Test extends StatelessWidget {

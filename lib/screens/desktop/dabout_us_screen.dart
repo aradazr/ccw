@@ -1,9 +1,9 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:ccw/constans/my_color.dart';
-import 'package:ccw/widgets/app_bar.dart';
-import 'package:ccw/widgets/core_values.dart';
-import 'package:ccw/widgets/footer.dart';
-import 'package:ccw/widgets/our_firm_and_other.dart';
+import 'package:ccw/widgets/desktop/app_bar.dart';
+import 'package:ccw/widgets/desktop/core_values.dart';
+import 'package:ccw/widgets/desktop/footer.dart';
+import 'package:ccw/widgets/desktop/our_firm_and_other.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:visibility_detector/visibility_detector.dart';
