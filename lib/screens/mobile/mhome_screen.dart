@@ -213,7 +213,7 @@ class _MhomeScreenState extends State<MhomeScreen> {
                       )
                           .animate(target: visibleItems.contains(index) ? 1 : 0)
                           .slideX(
-                              begin: 1, end: 0, duration: (600 + index * 200).ms)
+                              begin: 1, end: 0, duration: (400 + index * 200).ms)
                           .fade(duration: 300.ms, delay: 100.ms)
                           .shimmer(delay: 100.ms, duration: 1500.ms),
                     ),
@@ -308,14 +308,11 @@ class _MhomeScreenState extends State<MhomeScreen> {
                           description: data2[index]["description"]!,
                           image: data2[index]["image"]!,
                         )
-                            .animate(
-                                target: visibleItems2.contains(index) ? 1 : 0)
-                            .slideX(
-                                begin: 1,
-                                end: 0,
-                                duration: (600 + index * 200).ms)
-                            .fade(duration: 300.ms, delay: 100.ms)
-                            .shimmer(delay: 100.ms, duration: 1500.ms),
+                            .animate(target: visibleItems2.contains(index) ? 1 : 0)
+                          .slideX(
+                              begin: 1, end: 0, duration: (400 + index * 200).ms)
+                          .fade(duration: 300.ms, delay: 100.ms)
+                          .shimmer(delay: 100.ms, duration: 1500.ms),
                       ),
                     );
                   },
@@ -403,11 +400,8 @@ class _MhomeScreenState extends State<MhomeScreen> {
                       )
                           .animate(target: visibleItems3.contains(index) ? 1 : 0)
                           .slideX(
-                              begin: 1,
-                              end: 0,
-                              duration: 400.ms,
-                              curve: Curves.easeIn)
-                          .fade(duration: 300.ms, delay: 50.ms)
+                              begin: 1, end: 0, duration: (400 + index * 200).ms)
+                          .fade(duration: 300.ms, delay: 100.ms)
                           .shimmer(delay: 100.ms, duration: 1500.ms),
                     );
                   },
