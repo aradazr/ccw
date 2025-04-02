@@ -256,6 +256,10 @@ class MobileFooter extends StatelessWidget {
                   ResponsiveMobileUtils.getResponsiveSize(context, 12),
             ),
           ),
+
+          SizedBox(
+              height: ResponsiveMobileUtils.getResponsiveSize(context, 50),
+            ),
         ],
       ),
     );
