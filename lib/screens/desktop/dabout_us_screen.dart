@@ -335,7 +335,8 @@ class _DaboutUsScreenState extends State<DaboutUsScreen> {
         if (visibilityInfo.visibleFraction > 0.2 && !_isVisible) {
           setState(() {
             _isVisible = true;
-          });
+          },
+          );
         }
       },
       child: AnimatedOpacity(
