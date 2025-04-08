@@ -4,6 +4,7 @@ import 'package:ccw/screens/desktop/test.dart';
 import 'package:ccw/screens/mobile/mabout_us_screen.dart';
 import 'package:ccw/screens/mobile/mhome_screen.dart';
 import 'package:ccw/screens/mobile/mmeet_our_expert_screen.dart';
+import 'package:ccw/screens/mobile/mservices_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: const MaboutUsScreen(),
+      home: const MservicesScreen(),
     );
   }
 }

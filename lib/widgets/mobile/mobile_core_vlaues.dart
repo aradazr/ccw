@@ -40,6 +40,7 @@ class MobileCoreValues extends StatelessWidget {
                 Color(0xff051D12),
                 Color(0xff051D12),
                 Color(0xff051D12),
+                Color(0xff051D12),
                 Color(0xff008042),
               ],
             ),
