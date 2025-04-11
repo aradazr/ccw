@@ -32,11 +32,14 @@ class DmeetOurExperts extends StatelessWidget {
               Positioned(
                 top: size.width / 25,
                 left: size.width / 20.281,
-                child: Image.asset(
-                  'assets/images/circularArrow.png',
-                  fit: BoxFit.cover,
-                  height: size.width / 30,
-                  width: size.width / 30,
+                child: GestureDetector(
+                  onTap: () => Navigator.pop(context),
+                  child: Image.asset(
+                    'assets/images/circularArrow.png',
+                    fit: BoxFit.cover,
+                    height: size.width / 30,
+                    width: size.width / 30,
+                  ),
                 ),
               ),
               Positioned(

@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:ccw/constans/my_color.dart';
+import 'package:ccw/screens/desktop/meet_our_experts.dart';
 import 'package:ccw/widgets/desktop/app_bar.dart';
 import 'package:ccw/widgets/desktop/core_values.dart';
 import 'package:ccw/widgets/desktop/footer.dart';
@@ -197,71 +198,78 @@ class _DaboutUsScreenState extends State<DaboutUsScreen> {
                         SizedBox(
                           height: size.width / 36.92,
                         ),
-                        Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            Container(
-                              width: size.width / 7.78,
-                              height: size.width / 30,
-                              decoration: BoxDecoration(
-                                color: Colors.transparent,
-                                borderRadius: BorderRadius.circular(2000),
-                                border: Border.all(
-                                  width: 2,
-                                  color: Colors
-                                      .transparent, // خود border رنگ نمی‌دیم چون می‌خوایم gradient بشه
+                        GestureDetector(
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const DmeetOurExperts())),
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Container(
+                                width: size.width / 7.78,
+                                height: size.width / 30,
+                                decoration: BoxDecoration(
+                                  color: Colors.transparent,
+                                  borderRadius: BorderRadius.circular(2000),
+                                  border: Border.all(
+                                    width: 2,
+                                    color: Colors
+                                        .transparent, // خود border رنگ نمی‌دیم چون می‌خوایم gradient بشه
+                                  ),
                                 ),
-                              ),
-                              child: ShaderMask(
-                                shaderCallback: (bounds) => LinearGradient(
-                                  colors: [
-                                    Color(0xffE3C985),
-                                    Color(0xffA69464)
-                                  ],
-                                ).createShader(bounds),
-                                child: Container(
-                                  width: size.width / 7.78,
-                                  height: size.width / 30,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(2000),
-                                    border: Border.all(
-                                      width: 2,
-                                      color: Colors
-                                          .white, // این رنگ میره زیر gradient
+                                child: ShaderMask(
+                                  shaderCallback: (bounds) => LinearGradient(
+                                    colors: [
+                                      Color(0xffE3C985),
+                                      Color(0xffA69464)
+                                    ],
+                                  ).createShader(bounds),
+                                  child: Container(
+                                    width: size.width / 7.78,
+                                    height: size.width / 30,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(2000),
+                                      border: Border.all(
+                                        width: 2,
+                                        color: Colors
+                                            .white, // این رنگ میره زیر gradient
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                            Row(
-                              children: [
-                                ShaderMask(
-                                  shaderCallback: (bounds) => LinearGradient(
-                                    begin: Alignment.centerLeft,
-                                    end: Alignment.centerRight,
-                                    colors: [
-                                      Color(0xffE3C985),
-                                      Color(0xffA69464)
-                                    ], // رنگ‌های گرادیانت برای تکست
-                                  ).createShader(bounds),
-                                  child: Text(
-                                    'Meet our team',
-                                    style: TextStyle(
-                                        fontSize: size.width / 90,
-                                        color: MyColor.white,
-                                        fontWeight: FontWeight.bold),
+                              Row(
+                                children: [
+                                  ShaderMask(
+                                    shaderCallback: (bounds) => LinearGradient(
+                                      begin: Alignment.centerLeft,
+                                      end: Alignment.centerRight,
+                                      colors: [
+                                        Color(0xffE3C985),
+                                        Color(0xffA69464)
+                                      ], // رنگ‌های گرادیانت برای تکست
+                                    ).createShader(bounds),
+                                    child: Text(
+                                      'Meet our team',
+                                      style: TextStyle(
+                                          fontSize: size.width / 90,
+                                          color: MyColor.white,
+                                          fontWeight: FontWeight.bold),
+                                    ),
                                   ),
-                                ),
-                                SizedBox(
-                                  width: size.width / 180,
-                                ),
-                                Image.asset(
-                                  'assets/images/arrow.png',
-                                  height: size.width / 90,
-                                )
-                              ],
-                            )
-                          ],
+                                  SizedBox(
+                                    width: size.width / 180,
+                                  ),
+                                  Image.asset(
+                                    'assets/images/arrow.png',
+                                    height: size.width / 90,
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         )
                       ],
                     ),

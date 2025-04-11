@@ -94,7 +94,7 @@ class MservicesScreen extends StatelessWidget {
                         ResponsiveMobileUtils.getResponsiveSize(context, 402),
                     fit: BoxFit.cover,
                   ),
-                  MobileAppBar(),
+                  
                   Positioned(
                     top: -ResponsiveMobileUtils.getResponsiveSize(context, 400),
                     child: Image.asset(
@@ -170,7 +170,8 @@ class MservicesScreen extends StatelessWidget {
                                 duration: 1500.ms,
                               );
                         }),
-                      ))
+                      )),
+                      MobileAppBar(),
                 ],
               ),
             ),

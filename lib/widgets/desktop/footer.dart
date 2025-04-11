@@ -169,8 +169,9 @@ class Footer extends StatelessWidget {
               height: size.width/19.72,
             ),
             Container(
-              height: size.width/24.40,
-              width: size.width/24.40,
+              alignment: Alignment.center,
+              height: ResponsiveDesktopUtils.getResponsiveSize(context, 59),
+              width: ResponsiveDesktopUtils.getResponsiveSize(context, 59),
               decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [
                   Color(0xff000000),
@@ -179,9 +180,9 @@ class Footer extends StatelessWidget {
                 shape: BoxShape.circle,
               ),
               child: Image.asset('assets/images/cLogo.png',
-              height: ResponsiveMobileUtils.getResponsiveSize(context, 19),
-              width: ResponsiveMobileUtils.getResponsiveSize(context, 14.74),
-              fit: BoxFit.cover,
+              height: ResponsiveDesktopUtils.getResponsiveSize(context, 25),
+              width: ResponsiveDesktopUtils.getResponsiveSize(context, 25),
+              
               ),
             ),
             SizedBox(

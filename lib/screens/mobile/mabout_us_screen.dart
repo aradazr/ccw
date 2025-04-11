@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:ccw/constans/my_color.dart';
 import 'package:ccw/constans/responsive_utiles.dart';
+import 'package:ccw/screens/mobile/mmeet_our_expert_screen.dart';
 import 'package:ccw/widgets/mobile/mobile_app_bar.dart';
 import 'package:ccw/widgets/mobile/mobile_core_vlaues.dart';
 import 'package:ccw/widgets/mobile/mobile_footer.dart';
@@ -122,68 +123,76 @@ class _MaboutUsScreenState extends State<MaboutUsScreen> {
                   ),
                   Positioned(
                     top: ResponsiveMobileUtils.getResponsiveSize(context, 253),
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Container(
-                          width: ResponsiveMobileUtils.getResponsiveSize(
-                              context, 374),
-                          height: ResponsiveMobileUtils.getResponsiveSize(
-                              context, 44),
-                          decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            borderRadius: BorderRadius.circular(2000),
-                            border: Border.all(
-                              width: ResponsiveMobileUtils.getResponsiveSize(
-                                  context, 2),
-                              color: Colors
-                                  .transparent, // خود border رنگ نمی‌دیم چون می‌خوایم gradient بشه
+                    child: GestureDetector(
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MmeetOurExpertScreen(),
+                        ),
+                      ),
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Container(
+                            width: ResponsiveMobileUtils.getResponsiveSize(
+                                context, 374),
+                            height: ResponsiveMobileUtils.getResponsiveSize(
+                                context, 44),
+                            decoration: BoxDecoration(
+                              color: Colors.transparent,
+                              borderRadius: BorderRadius.circular(2000),
+                              border: Border.all(
+                                width: ResponsiveMobileUtils.getResponsiveSize(
+                                    context, 2),
+                                color: Colors
+                                    .transparent, // خود border رنگ نمی‌دیم چون می‌خوایم gradient بشه
+                              ),
                             ),
-                          ),
-                          child: ShaderMask(
-                            shaderCallback: (bounds) => LinearGradient(
-                              colors: [Color(0xffE3C985), Color(0xffA69464)],
-                            ).createShader(bounds),
-                            child: Container(
-                              width: ResponsiveMobileUtils.getResponsiveSize(
-                                  context, 374),
-                              height: ResponsiveMobileUtils.getResponsiveSize(
-                                  context, 44),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(
-                                    ResponsiveMobileUtils.getResponsiveSize(
-                                        context, 16)),
-                                border: Border.all(
-                                  width:
+                            child: ShaderMask(
+                              shaderCallback: (bounds) => LinearGradient(
+                                colors: [Color(0xffE3C985), Color(0xffA69464)],
+                              ).createShader(bounds),
+                              child: Container(
+                                width: ResponsiveMobileUtils.getResponsiveSize(
+                                    context, 374),
+                                height: ResponsiveMobileUtils.getResponsiveSize(
+                                    context, 44),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(
                                       ResponsiveMobileUtils.getResponsiveSize(
-                                          context, 2),
-                                  color:
-                                      Colors.white, // این رنگ میره زیر gradient
+                                          context, 16)),
+                                  border: Border.all(
+                                    width:
+                                        ResponsiveMobileUtils.getResponsiveSize(
+                                            context, 2),
+                                    color:
+                                        Colors.white, // این رنگ میره زیر gradient
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                        ShaderMask(
-                          shaderCallback: (bounds) => LinearGradient(
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
-                            colors: [
-                              Color(0xffE3C985),
-                              Color(0xffA69464)
-                            ], // رنگ‌های گرادیانت برای تکست
-                          ).createShader(bounds),
-                          child: Text(
-                            'Meet our team',
-                            style: TextStyle(
-                                fontSize:
-                                    ResponsiveMobileUtils.getResponsiveSize(
-                                        context, 16),
-                                color: MyColor.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        )
-                      ],
+                          ShaderMask(
+                            shaderCallback: (bounds) => LinearGradient(
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                              colors: [
+                                Color(0xffE3C985),
+                                Color(0xffA69464)
+                              ], // رنگ‌های گرادیانت برای تکست
+                            ).createShader(bounds),
+                            child: Text(
+                              'Meet our team',
+                              style: TextStyle(
+                                  fontSize:
+                                      ResponsiveMobileUtils.getResponsiveSize(
+                                          context, 16),
+                                  color: MyColor.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   Positioned(

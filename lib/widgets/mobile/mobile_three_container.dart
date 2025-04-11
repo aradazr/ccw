@@ -26,7 +26,7 @@ class _MobileThreeContainerState extends State<MobileThreeContainer> {
       onExit: (_) => setState(() => _isHovered = false),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
-        height: ResponsiveMobileUtils.getResponsiveSize(context, 155),
+        height: ResponsiveMobileUtils.getResponsiveSize(context, 165),
         width: ResponsiveMobileUtils.getResponsiveSize(context, 370),
         decoration: BoxDecoration(
           color: _isHovered ? MyColor.hoverCartColor : const Color(0xFF222A2F),

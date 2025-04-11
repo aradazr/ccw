@@ -14,21 +14,62 @@ class MmeetOurExpertScreen extends StatefulWidget {
 }
 
 class _MmeetOurExpertScreenState extends State<MmeetOurExpertScreen> {
-  double _dynamicHeight = 700; 
- // مقدار پیش‌فرض ارتفاع
-  void _updateHeight(double newHeight) {
+  final double _baseHeight = 700;
+  double _dynamicHeight = 700;
+  final List<bool> _expandedStates = List.filled(4, false);
+
+  void _onExpandChanged(int index, bool isExpanded) {
     setState(() {
-      _dynamicHeight = newHeight;
+      _expandedStates[index] = isExpanded;
+
+      double extraHeight = 0;
+      for (var expanded in _expandedStates) {
+        if (expanded) {
+          extraHeight += ResponsiveMobileUtils.getResponsiveSize(context, 250);
+        }
+      }
+
+      _dynamicHeight = _baseHeight + extraHeight;
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    List<Map<String, String>> data = [
+      {
+        "title": "CPA – Partner",
+        "name": "Parham Alizadehkia",
+        "image": "assets/images/parham.png",
+        "description":
+            "Parham Alizadehkia is an experienced CPA with a decade of experience in public practice, specializing in taxation and financial management. Having worked closely with numerous successful enterprises across Vancouver, he is committed to helping businesses achieve long-term financial success. Parham’s expertise lies in delivering comprehensive tax strategies that optimize business performance, allowing clients to focus on operational excellence. His dedication to sound financial practices and strategic tax planning ensures that businesses not only meet compliance requirements but also thrive in a competitive landscape."
+      },
+      {
+        "title": "Retired Partner (Advisor)",
+        "name": "Brian Cawley, CPA, CA",
+        "image": "assets/images/parham.png",
+        "description":
+            "With over 40 years of experience, Brian Cawley has been a trusted advisor to owner-operated businesses since 1985. His extensive tax knowledge and deep understanding of the financial challenges faced by entrepreneurs have made him a cornerstone in the industry. Brian’s commitment to providing tailored solutions has helped countless business owners navigate the complexities of taxation and financial planning. As he transitions into retirement, his legacy continues through the firm, ensuring that clients receive the same level of expertise and personalized service."
+      },
+      {
+        "title": "CPA – Partner",
+        "name": "Kantaro Horino",
+        "image": "assets/images/parham.png",
+        "description":
+            "Kantaro Horino is a dedicated CPA student with a strong passion for accounting and tax services. Born and raised in Vancouver, BC, he is fluent in both English and Japanese. He holds a Business degree from the University of Victoria and has gained valuable experience through multiple internships before returning to CCW CPA as a tax accountant to pursue his CPA designation. With a keen eye for detail and a deep understanding of financial management and tax preparation, Kantaro is committed to delivering high-quality services by ensuring accurate financial reporting and full regulatory compliance. Under the mentorship of seasoned professionals, he continues to develop his expertise in taxation and financial advisory, making him a valuable asset to both the firm and our clients."
+      },
+      {
+        "title": "Administrative Specialist",
+        "name": "Colette Lam",
+        "image": "assets/images/parham.png",
+        "description":
+            "Since joining CCW CPA in 2013, Colette Lam has been a key pillar of stability and eƯiciency within the firm. With years of experience in public practice, she plays a crucial role in ensuring the seamless operation of our firm, particularly during the busiest seasons. Highly organized and detail-oriented, Colette excels in problem-solving, eƯective communication, and client service, consistently going beyond the scope of her administrative role to support both the team and our clients. Her deep knowledge of administrative processes and unwavering commitment to excellence contribute significantly to the professionalism and success of CCW CPA."
+      }
+    ];
+
     return Scaffold(
       backgroundColor: MyColor.backGround,
       body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
               height: _dynamicHeight,
@@ -40,10 +81,8 @@ class _MmeetOurExpertScreenState extends State<MmeetOurExpertScreen> {
                     top: -ResponsiveMobileUtils.getResponsiveSize(context, 400),
                     child: Image.asset(
                       'assets/images/greenBlur2.png',
-                      height: ResponsiveMobileUtils.getResponsiveSize(
-                          context, 1000),
-                      width: ResponsiveMobileUtils.getResponsiveSize(
-                          context, 1200),
+                      height: ResponsiveMobileUtils.getResponsiveSize(context, 1000),
+                      width: ResponsiveMobileUtils.getResponsiveSize(context, 1200),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -56,27 +95,22 @@ class _MmeetOurExpertScreenState extends State<MmeetOurExpertScreen> {
                           textAlign: TextAlign.center,
                           'Meets our experts',
                           style: TextStyle(
-                              fontSize: ResponsiveMobileUtils.getResponsiveSize(
-                                  context, 20),
-                              color: MyColor.white,
-                              fontWeight: FontWeight.w900),
+                            fontSize: ResponsiveMobileUtils.getResponsiveSize(context, 20),
+                            color: MyColor.white,
+                            fontWeight: FontWeight.w900,
+                          ),
                         ),
+                        SizedBox(height: ResponsiveMobileUtils.getResponsiveSize(context, 12)),
                         SizedBox(
-                          height: ResponsiveMobileUtils.getResponsiveSize(
-                              context, 12),
-                        ),
-                        SizedBox(
-                          width: ResponsiveMobileUtils.getResponsiveSize(
-                              context, 370),
+                          width: ResponsiveMobileUtils.getResponsiveSize(context, 370),
                           child: Text(
                             textAlign: TextAlign.center,
                             'Discover the passionate of innovators, strategist, and customer success professionals working tirelessly to help you achieve your goals',
                             style: TextStyle(
-                                fontSize:
-                                    ResponsiveMobileUtils.getResponsiveSize(
-                                        context, 14),
-                                color: MyColor.white,
-                                fontWeight: FontWeight.w200),
+                              fontSize: ResponsiveMobileUtils.getResponsiveSize(context, 14),
+                              color: MyColor.white,
+                              fontWeight: FontWeight.w200,
+                            ),
                           ),
                         ),
                       ],
@@ -85,72 +119,29 @@ class _MmeetOurExpertScreenState extends State<MmeetOurExpertScreen> {
                   Positioned(
                     top: ResponsiveMobileUtils.getResponsiveSize(context, 223),
                     child: Column(
-                      spacing:
-                          ResponsiveMobileUtils.getResponsiveSize(context, 12),
-                      children: List.generate(
-                        4,
-                        (index) {
-                          List<Map<String, String>> data = [
-                            {
-                              "title": "CPA – Partner",
-                              "name": "Parham Alizadehkia",
-                              "image": "assets/images/parham.png",
-                              "description":
-                                  "Parham Alizadehkia is an experienced CPA with a decade of experience in public practice, specializing in taxation and financial management. Having worked closely with numerous successful enterprises across Vancouver, he is committed to helping businesses achieve long-term financial success. Parham’s expertise lies in delivering comprehensive tax strategies that optimize business performance, allowing clients to focus on operational excellence. His dedication to sound financial practices and strategic tax planning ensures that businesses not only meet compliance requirements but also thrive in a competitive landscape."
-                            },
-                            {
-                              "title": "Retired Partner (Advisor)",
-                              "name": "Brian Cawley, CPA, CA",
-                              "image": "assets/images/parham.png",
-                              "description":
-                                  "With over 40 years of experience, Brian Cawley has been a trusted advisor to owner-operated businesses since 1985. His extensive tax knowledge and deep understanding of the financial challenges faced by entrepreneurs have made him a cornerstone in the industry. Brian’s commitment to providing tailored solutions has helped countless business owners navigate the complexities of taxation and financial planning. As he transitions into retirement, his legacy continues through the firm, ensuring that clients receive the same level of expertise and personalized service."
-                            },
-                            {
-                              "title": "CPA – Partner",
-                              "name": "Kantaro Horino",
-                              "image": "assets/images/parham.png",
-                              "description":
-                                  "Kantaro Horino is a dedicated CPA student with a strong passion for accounting and tax services. Born and raised in Vancouver, BC, he is fluent in both English and Japanese. He holds a Business degree from the University of Victoria and has gained valuable experience through multiple internships before returning to CCW CPA as a tax accountant to pursue his CPA designation. With a keen eye for detail and a deep understanding of financial management and tax preparation, Kantaro is committed to delivering high-quality services by ensuring accurate financial reporting and full regulatory compliance. Under the mentorship of seasoned professionals, he continues to develop his expertise in taxation and financial advisory, making him a valuable asset to both the firm and our clients."
-                            },
-                            {
-                              "title": "Administrative Specialist",
-                              "name": "Colette Lam",
-                              "image": "assets/images/parham.png",
-                              "description":
-                                  "Since joining CCW CPA in 2013, Colette Lam has been a key pillar of stability and eƯiciency within the firm. With years of experience in public practice, she plays a crucial role in ensuring the seamless operation of our firm, particularly during the busiest seasons. Highly organized and detail-oriented, Colette excels in problem-solving, eƯective communication, and client service, consistently going beyond the scope of her administrative role to support both the team and our clients. Her deep knowledge of administrative processes and unwavering commitment to excellence contribute significantly to the professionalism and success of CCW CPA."
-                            }
-                          ];
-                          return AnimatedContainer(
-                            duration: Duration(milliseconds: 500),
-                            child: MobileCompanyMember(
-                              image: data[index]['image']!,
-                              name: data[index]['name']!,
-                              title: data[index]['title']!,
-                              description: data[index]['description']!,
-                              onExpand: (isExpanded) {
-                                double extraHeight =
-                                    isExpanded ? ResponsiveMobileUtils.getResponsiveSize(context, 220) : ResponsiveMobileUtils.getResponsiveSize(context, 600); // تغییر ارتفاع
-                                _updateHeight(_dynamicHeight + extraHeight);
-                              },
-                            ),
-                          )
-                              .animate()
-                              .slideX(
-                                  begin: 1,
-                                  end: 0,
-                                  duration: (600 + index * 200).ms)
-                              .fade(duration: 300.ms, delay: 100.ms)
-                              .shimmer(
-                                  delay: (600 + index * 200).ms,
-                                  duration: 1500.ms);
-                        },
-                      ),
+                      spacing: ResponsiveMobileUtils.getResponsiveSize(context, 12),
+                      children: List.generate(4, (index) {
+                        return AnimatedContainer(
+                          duration: const Duration(milliseconds: 500),
+                          child: MobileCompanyMember(
+                            image: data[index]['image']!,
+                            name: data[index]['name']!,
+                            title: data[index]['title']!,
+                            description: data[index]['description']!,
+                            onExpand: (isExpanded) => _onExpandChanged(index, isExpanded),
+                          ),
+                        )
+                            .animate()
+                            .slideX(begin: 1, end: 0, duration: (600 + index * 200).ms)
+                            .fade(duration: 300.ms, delay: 100.ms)
+                            .shimmer(delay: (600 + index * 200).ms, duration: 1500.ms);
+                      }),
                     ),
                   ),
                 ],
               ),
             ),
-            MobileFooter()
+            MobileFooter(),
           ],
         ),
       ),
