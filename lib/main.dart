@@ -1,4 +1,5 @@
 import 'package:ccw/screens/desktop/dabout_us_screen.dart';
+import 'package:ccw/screens/desktop/dresources_screen.dart';
 import 'package:ccw/screens/desktop/dservices_screen.dart';
 import 'package:ccw/screens/desktop/meet_our_experts.dart';
 import 'package:ccw/screens/desktop/test.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: const SplashScreen(),
+      home: const DresourcesScreen(),
     );
   }
 }
