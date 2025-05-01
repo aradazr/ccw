@@ -152,7 +152,7 @@ class Footer extends StatelessWidget {
                   height: size.width/720,
                 ),
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(ResponsiveDesktopUtils.getResponsiveSize(context, 30),),
                   child: Image.asset(
                     'assets/images/map.png',
                     height: size.width/4.66

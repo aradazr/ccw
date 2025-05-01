@@ -3,97 +3,113 @@ import 'package:ccw/constans/responsive_utiles.dart';
 import 'package:ccw/models/pdf_item.dart';
 import 'package:ccw/models/title_model.dart';
 import 'package:ccw/repository/pdf_repository.dart';
-import 'package:ccw/widgets/desktop/app_bar.dart';
-import 'package:ccw/widgets/desktop/footer.dart';
-import 'package:ccw/widgets/desktop/resources_container.dart';
-import 'package:dio/dio.dart';
+import 'package:ccw/widgets/mobile/mobile_app_bar.dart';
+import 'package:ccw/widgets/mobile/mobile_resources_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class DresourcesScreen extends StatelessWidget {
-  DresourcesScreen({super.key});
-  final PdfRepository pdfRepository = PdfRepository();
+import '../../widgets/desktop/resources_container.dart';
+
+class MrecourcesScreen extends StatelessWidget {
+   MrecourcesScreen({super.key});
+    final PdfRepository pdfRepository = PdfRepository();
+
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: MyColor.backGround,
       body: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(
-              height: ResponsiveDesktopUtils.getResponsiveSize(context, 583),
+              height: ResponsiveMobileUtils.getResponsiveSize(context, 554),
               child: Stack(
                 alignment: Alignment.topCenter,
                 children: [
                   Image.asset(
-                    'assets/images/recources.png',
-                    height:
-                        ResponsiveDesktopUtils.getResponsiveSize(context, 583),
-                    width:
-                        ResponsiveDesktopUtils.getResponsiveSize(context, 1440),
+                    'assets/images/mobileResources.png',
                     fit: BoxFit.cover,
+                    width:
+                        ResponsiveMobileUtils.getResponsiveSize(context, 402),
+                    height:
+                        ResponsiveMobileUtils.getResponsiveSize(context, 377),
                   ),
                   Positioned(
-                    top: 0,
-                    child: MyAppbar(
-                      size: size,
-                      homeStyle: TextStyle(
-                          fontSize: size.width / 90,
-                          color: MyColor.white,
-                          fontWeight: FontWeight.w200),
-                      aboutStyle: TextStyle(
-                          fontSize: size.width / 90,
-                          color: MyColor.white,
-                          fontWeight: FontWeight.w200),
-                      servicesStyle: TextStyle(
-                          fontSize: size.width / 90,
-                          color: MyColor.white,
-                          fontWeight: FontWeight.w200),
-                      resourcesStyle: TextStyle(
-                          decoration: TextDecoration.underline,
-                          decorationThickness: 1,
-                          decorationColor: MyColor.primary,
-                          fontSize: size.width / 90,
-                          color: MyColor.primary,
-                          fontWeight: FontWeight.w200),
-                      contactStyle: TextStyle(
-                          fontSize: size.width / 90,
-                          color: MyColor.white,
-                          fontWeight: FontWeight.w200),
+                    top: -ResponsiveMobileUtils.getResponsiveSize(context, 400),
+                    child: Image.asset(
+                      'assets/images/greenBlur2.png',
+                      height: ResponsiveMobileUtils.getResponsiveSize(
+                          context, 1000),
+                      width: ResponsiveMobileUtils.getResponsiveSize(
+                          context, 1200),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  MobileAppBar(),
+                  Positioned(
+                    top: ResponsiveMobileUtils.getResponsiveSize(context, 168),
+                    child: Text(
+                      'Resources',
+                      style: TextStyle(
+                        fontSize: ResponsiveMobileUtils.getResponsiveSize(
+                            context, 20),
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   Positioned(
-                    top: ResponsiveDesktopUtils.getResponsiveSize(context, 230),
+                    top: ResponsiveMobileUtils.getResponsiveSize(context, 207),
+                    child: SizedBox(
+                      width:
+                          ResponsiveMobileUtils.getResponsiveSize(context, 359),
+                      child: Text(
+                        textAlign: TextAlign.center,
+                        'Helping businesses and individuals streamline accounting, optimize tax strategies, and stay compliant.',
+                        style: TextStyle(
+                          fontSize: ResponsiveMobileUtils.getResponsiveSize(
+                              context, 14),
+                          fontWeight: FontWeight.normal,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: ResponsiveMobileUtils.getResponsiveSize(context, 450),
                     child: Column(
                       spacing:
-                          ResponsiveDesktopUtils.getResponsiveSize(context, 16),
+                          ResponsiveMobileUtils.getResponsiveSize(context, 4),
                       children: [
-                        Text(
-                          'Resources',
-                          style: TextStyle(
-                              fontSize:
-                                  ResponsiveDesktopUtils.getResponsiveSize(
-                                      context, 48),
-                              color: MyColor.white,
-                              fontWeight: FontWeight.bold),
-                        ),
                         SizedBox(
-                          width: ResponsiveDesktopUtils.getResponsiveSize(
-                              context, 555),
+                          width: ResponsiveMobileUtils.getResponsiveSize(
+                              context, 300),
                           child: Text(
                             textAlign: TextAlign.center,
-                            'Find the information you need with our comprehensive resources for individuals and businesses.',
+                            'Accounting and Business Resources Online',
                             style: TextStyle(
-                                fontSize:
-                                    ResponsiveDesktopUtils.getResponsiveSize(
-                                        context, 24),
-                                color: MyColor.white,
-                                fontWeight: FontWeight.normal),
+                              fontSize: ResponsiveMobileUtils.getResponsiveSize(
+                                  context, 24),
+                              fontWeight: FontWeight.bold,
+                              color: MyColor.secendry,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: ResponsiveMobileUtils.getResponsiveSize(
+                              context, 347),
+                          child: Text(
+                            textAlign: TextAlign.center,
+                            'Have questions? Our professional accountants and business advisors are here to assist you.',
+                            style: TextStyle(
+                              fontSize: ResponsiveMobileUtils.getResponsiveSize(
+                                  context, 12),
+                              fontWeight: FontWeight.normal,
+                              color: MyColor.white,
+                            ),
                           ),
                         ),
                       ],
@@ -103,36 +119,9 @@ class DresourcesScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: ResponsiveDesktopUtils.getResponsiveSize(context, 103),
+              height: ResponsiveMobileUtils.getResponsiveSize(context, 32),
             ),
-            Column(
-              spacing: ResponsiveDesktopUtils.getResponsiveSize(context, 16),
-              children: [
-                Text(
-                  'Accounting and Business Resources Online',
-                  style: TextStyle(
-                      fontSize:
-                          ResponsiveDesktopUtils.getResponsiveSize(context, 36),
-                      color: MyColor.secendry,
-                      fontWeight: FontWeight.bold),
-                ),
-                SizedBox(
-                  width: ResponsiveDesktopUtils.getResponsiveSize(context, 769),
-                  child: Text(
-                    textAlign: TextAlign.center,
-                    'Have questions? Our professional accountants and business advisors are here to assist you.',
-                    style: TextStyle(
-                        fontSize: ResponsiveDesktopUtils.getResponsiveSize(
-                            context, 24),
-                        color: MyColor.white,
-                        fontWeight: FontWeight.normal),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: ResponsiveDesktopUtils.getResponsiveSize(context, 1),
-            ),
+            //! logic and api
             FutureBuilder(
               future: pdfRepository.fetchTitles(),
               builder: (context, snapshot) {
@@ -140,7 +129,7 @@ class DresourcesScreen extends StatelessWidget {
                   return Column(
                     children: [
                       SizedBox(
-                        height: ResponsiveDesktopUtils.getResponsiveSize(
+                        height: ResponsiveMobileUtils.getResponsiveSize(
                             context, 96),
                       ),
                       Padding(
@@ -157,9 +146,9 @@ class DresourcesScreen extends StatelessWidget {
                                   Colors.grey[600]!, // روشن‌تر ولی نه سفید
                               child: Container(
                                 height:
-                                    ResponsiveDesktopUtils.getResponsiveSize(
+                                    ResponsiveMobileUtils.getResponsiveSize(
                                         context, 64),
-                                width: ResponsiveDesktopUtils.getResponsiveSize(
+                                width: ResponsiveMobileUtils.getResponsiveSize(
                                     context, 371),
                                 decoration: BoxDecoration(
                                   color: Colors
@@ -195,19 +184,20 @@ class DresourcesScreen extends StatelessWidget {
                       PdfTitle title = titles[index];
                       return Padding(
                         padding: EdgeInsets.only(
-                          top: ResponsiveDesktopUtils.getResponsiveSize(
+                          top: ResponsiveMobileUtils.getResponsiveSize(
                               context, 96),
                         ),
                         child: Column(
-                          spacing: ResponsiveDesktopUtils.getResponsiveSize(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          spacing: ResponsiveMobileUtils.getResponsiveSize(
                               context, 32),
                           children: [
                             Text(
                               title.title,
                               style: TextStyle(
                                 fontSize:
-                                    ResponsiveDesktopUtils.getResponsiveSize(
-                                        context, 32),
+                                    ResponsiveMobileUtils.getResponsiveSize(
+                                        context, 24),
                                 color: MyColor.white,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -231,9 +221,9 @@ class DresourcesScreen extends StatelessWidget {
                                           highlightColor: Colors.grey[
                                               600]!, // روشن‌تر ولی نه سفید
                                           child: Container(
-                                            height: ResponsiveDesktopUtils
+                                            height: ResponsiveMobileUtils
                                                 .getResponsiveSize(context, 64),
-                                            width: ResponsiveDesktopUtils
+                                            width: ResponsiveMobileUtils
                                                 .getResponsiveSize(
                                                     context, 371),
                                             decoration: BoxDecoration(
@@ -247,7 +237,10 @@ class DresourcesScreen extends StatelessWidget {
                                       }),
                                     ),
                                   );
-                                } else if (fileSnapshot.hasError) {
+                                } 
+                                
+                                //? if we have error
+                                else if (fileSnapshot.hasError) {
                                   WidgetsBinding.instance
                                       .addPostFrameCallback((_) {
                                     ScaffoldMessenger.of(context).showSnackBar(
@@ -259,14 +252,16 @@ class DresourcesScreen extends StatelessWidget {
                                     );
                                   });
                                   return SizedBox(); // یا هر ویجت خالی دیگر
-                                } else if (!fileSnapshot.hasData ||
+                                } 
+                                //? if we dont have data
+                                else if (!fileSnapshot.hasData ||
                                     fileSnapshot.data!.isEmpty) {
                                   return Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Wrap(
                                       alignment: WrapAlignment.center,
-                                      spacing: 12,
-                                      runSpacing: 12,
+                                      spacing: ResponsiveMobileUtils.getResponsiveSize(context, 12),
+                                      runSpacing: ResponsiveMobileUtils.getResponsiveSize(context, 12),
                                       children: List.generate(9, (index) {
                                         return Shimmer.fromColors(
                                           baseColor: Colors.grey[
@@ -274,30 +269,28 @@ class DresourcesScreen extends StatelessWidget {
                                           highlightColor: Colors.grey[
                                               600]!, // روشن‌تر ولی نه سفید
                                           child: Container(
-                                            height: ResponsiveDesktopUtils
+                                            height: ResponsiveMobileUtils
                                                 .getResponsiveSize(context, 64),
-                                            width: ResponsiveDesktopUtils
+                                            width: ResponsiveMobileUtils
                                                 .getResponsiveSize(
                                                     context, 371),
                                             decoration: BoxDecoration(
                                               color: Colors.grey[
                                                   850], // رنگ بک‌گراند داخل شِیمر
                                               borderRadius:
-                                                  BorderRadius.circular(12),
+                                                  BorderRadius.circular(ResponsiveMobileUtils.getResponsiveSize(context, 8)),
                                             ),
                                           ),
                                         );
                                       }),
                                     ),
                                   );
-                                } else {
+                                } 
+                                //? if the data is not empty
+                                else {
                                   List<PdfItem> files = fileSnapshot.data!;
-                                  return Wrap(
-                                    alignment: WrapAlignment.center,
-                                    spacing: ResponsiveDesktopUtils
-                                        .getResponsiveSize(context, 24),
-                                    runSpacing: ResponsiveDesktopUtils
-                                        .getResponsiveSize(context, 24),
+                                  return Column(
+                                    spacing: ResponsiveMobileUtils.getResponsiveSize(context, 12),
                                     children:
                                         files.asMap().entries.map((entry) {
                                       final index = entry.key;
@@ -322,7 +315,7 @@ class DresourcesScreen extends StatelessWidget {
                                             });
                                           }
                                         },
-                                        child: ResourcesContainer(file: file)
+                                        child: MobileResourcesContainer(file: file)
                                             .animate()
                                             .fade(
                                                 duration: 400.ms,
@@ -346,17 +339,9 @@ class DresourcesScreen extends StatelessWidget {
                 }
               },
             ),
-            SizedBox(
-              height: ResponsiveDesktopUtils.getResponsiveSize(context, 96),
-            ),
-            Footer(size: size)
           ],
         ),
       ),
     );
   }
-
-
 }
-
-
