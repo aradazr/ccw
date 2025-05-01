@@ -46,7 +46,10 @@ dependencies:
   dartz: ^0.10.1
   shimmer: ^3.0.0
   path_provider: ^2.1.5
+  webview_flutter: ^4.2.2
+  webview_flutter_web: ^0.2.2+3
   intl: ^0.20.2
+  flutter_recaptcha_v2_compat: ^1.0.3+3
 
 
 dev_dependencies:
