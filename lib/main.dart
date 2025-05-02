@@ -1,4 +1,4 @@
-import 'package:ccw/screens/desktop/message_form_screen.dart';
+import 'package:ccw/screens/desktop/dcontact_us_screen.dart';
 import 'package:ccw/screens/desktop/dabout_us_screen.dart';
 import 'package:ccw/screens/desktop/dresources_screen.dart';
 import 'package:ccw/screens/desktop/dservices_screen.dart';
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home:  SplashScreen(),
+      home:  DcontactUsScreen(),
     );
   }
 }

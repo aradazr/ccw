@@ -1,8 +1,9 @@
 import 'package:ccw/constans/my_color.dart';
 import 'package:ccw/screens/desktop/dabout_us_screen.dart';
 import 'package:ccw/screens/desktop/dhome_screen.dart';
+import 'package:ccw/screens/desktop/dresources_screen.dart';
 import 'package:ccw/screens/desktop/dservices_screen.dart';
-import 'package:ccw/screens/desktop/message_form_screen.dart';
+import 'package:ccw/screens/desktop/dcontact_us_screen.dart';
 import 'package:ccw/widgets/desktop/hover_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -71,7 +72,7 @@ class MyAppbar extends StatelessWidget {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const DhomeScreen(),
+                    builder: (context) =>  DresourcesScreen(),
                   ),
                 ),
                 child:
@@ -79,20 +80,21 @@ class MyAppbar extends StatelessWidget {
               ),
               SizedBox(width: size.width / 60),
               GestureDetector(
-                onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => SendMessagePage())),
-                child: HoverText(text: 'Contact Us', defaultStyle: contactStyle)),
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DcontactUsScreen())),
+                  child: HoverText(
+                      text: 'Contact Us', defaultStyle: contactStyle)),
               SizedBox(width: size.width / 60),
               GestureDetector(
-                 onTap: () async {
-                    final Uri url = Uri.parse(
-                        'https://ccw.myonlinebookkeeping.com');
-                    if (!await launchUrl(url)) {
-                      throw Exception('Could not launch');
-                    }
-                  },
+                onTap: () async {
+                  final Uri url =
+                      Uri.parse('https://ccw.myonlinebookkeeping.com');
+                  if (!await launchUrl(url)) {
+                    throw Exception('Could not launch');
+                  }
+                },
                 child: Container(
                   alignment: Alignment.center,
                   width: size.width / 10.99,
