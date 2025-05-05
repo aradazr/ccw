@@ -84,17 +84,17 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
 
   String? validateEmail(String email) {
     if (email.trim().length < 6) {
-      return 'ایمیل باید حداقل ۶ کاراکتر داشته باشد.';
+      return 'Your email must be at least 6 characters long.';
     }
 
     final emailRegex = RegExp(r"^[\w\.-]+@[\w\.-]+\.\w{2,}$");
     if (!emailRegex.hasMatch(email)) {
-      return 'لطفاً یک ایمیل معتبر وارد کنید.';
+      return 'Invalid email format.';
     }
 
     final localPart = email.split('@').first;
     if (localPart.length < 6) {
-      return 'بخش اول ایمیل (قبل از @) باید حداقل ۴ کاراکتر داشته باشد.';
+      return 'Your email local part must be at least 6 characters long.';
     }
 
     return null;
@@ -115,20 +115,20 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
 
     if (message.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('لطفاً پیام را وارد کنید.')),
+        SnackBar(content: Text('Please enter a message.')),
       );
       return;
     }
 
     if (captchaInput != (num1 + num2).toString()) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('کد امنیتی اشتباه است.')),
+        SnackBar(content: Text('The captcha is incorrect.')),
       );
       return;
     }
     if (isDisposableEmail(email)) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('لطفاً از یک ایمیل واقعی استفاده کنید.')),
+        SnackBar(content: Text('Please use a valid email address.')),
       );
       return;
     }
@@ -148,7 +148,8 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
         setState(() => isSending = false);
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('شما امروز قبلاً پیام ارسال کرده‌اید.'),
+            behavior: SnackBarBehavior.floating,
+            content: Text('You have already sent a message today.'),
             backgroundColor: Colors.red,
           ),
         );
@@ -173,14 +174,19 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
         captchaController.clear();
         _generateCaptcha();
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('پیام با موفقیت ارسال شد!')),
+          SnackBar(
+            behavior: SnackBarBehavior.floating,
+            backgroundColor: Colors.green,
+            content: Text('Message sent successfully!'),),
+
         );
       }
     } on DioException catch (e) {
       setState(() => isSending = false);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('خطا در ارسال پیام. دوباره تلاش کنید.'),
+          behavior: SnackBarBehavior.floating,
+          content: Text('An error occurred while sending the message.'),
           backgroundColor: Colors.red,
         ),
       );
@@ -806,52 +812,6 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
         ),
       ),
     );
-    // Scaffold(
-    //   appBar: AppBar(title: Text('ارسال پیام')),
-    //   body: SingleChildScrollView(
-    //     padding: const EdgeInsets.all(16),
-    //     child: Column(
-    //       children: [
-    //         TextField(
-    //           controller: emailController,
-    //           decoration: InputDecoration(labelText: 'ایمیل شما'),
-    //           keyboardType: TextInputType.emailAddress,
-    //         ),
-    //         SizedBox(height: 12),
-    //         TextField(
-    //           controller: messageController,
-    //           decoration: InputDecoration(labelText: 'متن پیام'),
-    //           maxLines: 5,
-    //         ),
-    //         SizedBox(height: 12),
-    //         Row(
-    //           children: [
-    //             Text('کد امنیتی: $num1 + $num2 = '),
-    //             SizedBox(width: 12),
-    //             Expanded(
-    //               child: TextField(
-    //                 controller: captchaController,
-    //                 decoration: InputDecoration(hintText: 'پاسخ را وارد کنید'),
-    //                 keyboardType: TextInputType.number,
-    //               ),
-    //             ),
-    //             IconButton(
-    //               onPressed: _generateCaptcha,
-    //               icon: Icon(Icons.refresh),
-    //               tooltip: 'تغییر کد',
-    //             ),
-    //           ],
-    //         ),
-    //         SizedBox(height: 20),
-    //         isSending
-    //             ? CircularProgressIndicator()
-    //             : ElevatedButton(
-    //                 onPressed: sendMessage,
-    //                 child: Text('ارسال پیام'),
-    //               ),
-    //       ],
-    //     ),
-    //   ),
-    // );
+    
   }
 }

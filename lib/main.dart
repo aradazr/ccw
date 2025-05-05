@@ -17,8 +17,6 @@ import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_web/webview_flutter_web.dart';
 
 void main() {
-
-
   runApp(MyApp());
 }
 
@@ -36,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home:  DcontactUsScreen(),
+      home: DcontactUsScreen(),
     );
   }
 }
