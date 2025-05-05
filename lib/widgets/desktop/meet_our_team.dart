@@ -71,6 +71,8 @@ class MeetOurTeam extends StatelessWidget {
               SizedBox(
                   width: size.width / 1.399,
                   child: Text(
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 5,
                     style: TextStyle(
                       height: 1.5,
                       color: MyColor.grey,

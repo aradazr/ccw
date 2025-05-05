@@ -16,7 +16,7 @@ class MobileOurFirmAndOther extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ResponsiveMobileUtils.getResponsiveSize(context, 444),
+      height: ResponsiveMobileUtils.getResponsiveSize(context, 420),
       width: ResponsiveMobileUtils.getResponsiveSize(context, 378),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
@@ -69,7 +69,7 @@ class MobileOurFirmAndOther extends StatelessWidget {
                         ResponsiveMobileUtils.getResponsiveSize(context, 337),
                     child: Text(
                         overflow: TextOverflow.ellipsis,
-                        maxLines: 5,
+                        maxLines: 6,
                         style: TextStyle(
                             fontSize: ResponsiveMobileUtils.getResponsiveSize(
                               context,
@@ -85,63 +85,7 @@ class MobileOurFirmAndOther extends StatelessWidget {
           SizedBox(
             height: ResponsiveMobileUtils.getResponsiveSize(context, 14),
           ),
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              Container(
-                width: ResponsiveMobileUtils.getResponsiveSize(context, 353),
-                height: ResponsiveMobileUtils.getResponsiveSize(context, 44),
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  borderRadius: BorderRadius.circular(
-                      ResponsiveMobileUtils.getResponsiveSize(context, 24)),
-                  border: Border.all(
-                    width: ResponsiveMobileUtils.getResponsiveSize(context, 2),
-                    color: Colors
-                        .transparent, // خود border رنگ نمی‌دیم چون می‌خوایم gradient بشه
-                  ),
-                ),
-                child: ShaderMask(
-                  shaderCallback: (bounds) => LinearGradient(
-                    colors: [Color(0xffE3C985), Color(0xffA69464)],
-                  ).createShader(bounds),
-                  child: Container(
-                    width:
-                        ResponsiveMobileUtils.getResponsiveSize(context, 374),
-                    height:
-                        ResponsiveMobileUtils.getResponsiveSize(context, 44),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(
-                          ResponsiveMobileUtils.getResponsiveSize(context, 16)),
-                      border: Border.all(
-                        width:
-                            ResponsiveMobileUtils.getResponsiveSize(context, 2),
-                        color: Colors.white, // این رنگ میره زیر gradient
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              ShaderMask(
-                shaderCallback: (bounds) => LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                  colors: [
-                    Color(0xffE3C985),
-                    Color(0xffA69464)
-                  ], // رنگ‌های گرادیانت برای تکست
-                ).createShader(bounds),
-                child: Text(
-                  'Learn More',
-                  style: TextStyle(
-                      fontSize:
-                          ResponsiveMobileUtils.getResponsiveSize(context, 16),
-                      color: MyColor.white,
-                      fontWeight: FontWeight.bold),
-                ),
-              )
-            ],
-          ),
+          
         ],
       ),
     );

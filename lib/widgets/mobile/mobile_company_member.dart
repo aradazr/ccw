@@ -126,6 +126,7 @@ class _MobileCompanyMemberState extends State<MobileCompanyMember> {
             child: Padding(
               padding:  EdgeInsets.only(top: ResponsiveMobileUtils.getResponsiveSize(context, 12)),
               child: Text(
+                
                 overflow: TextOverflow.ellipsis,
                 maxLines: 12,
                 style: TextStyle(

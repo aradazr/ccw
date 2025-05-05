@@ -205,7 +205,7 @@ class _DservicesScreenState extends State<DservicesScreen> {
                         width: ResponsiveDesktopUtils.getResponsiveSize(
                             context, 543),
                         height: ResponsiveDesktopUtils.getResponsiveSize(
-                            context, 280),
+                            context, 282),
                         child: item
                             .animate(target: _isVisible ? 1 : 0)
                             .slideX(

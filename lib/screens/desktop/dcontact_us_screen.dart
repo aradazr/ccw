@@ -5,6 +5,7 @@ import 'package:ccw/widgets/desktop/app_bar.dart';
 import 'package:ccw/widgets/desktop/footer.dart';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:intl/intl.dart';
 
 class DcontactUsScreen extends StatefulWidget {
@@ -839,10 +840,10 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
                           ],
                         ),
                       ),
-                    ),
+                    ).animate().slideX().shimmer(duration: 1.5.seconds),
                   )
                 ],
-              ),
+              )
             ),
             SizedBox(
               height: size.width / 8.78,
