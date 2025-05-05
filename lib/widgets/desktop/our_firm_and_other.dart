@@ -53,6 +53,8 @@ class OurFirmAndOther extends StatelessWidget {
               SizedBox(
                 width: size.width / 3.144,
                 child: Text(
+                  maxLines: 10,
+                  overflow: TextOverflow.ellipsis,
                   description,
                   style: TextStyle(
                     fontWeight: FontWeight.normal,
@@ -64,61 +66,7 @@ class OurFirmAndOther extends StatelessWidget {
               SizedBox(
                 height: size.width / 53.33,
               ),
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Container(
-                    width: size.width / 9.53,
-                    height: size.width / 30,
-                    decoration: BoxDecoration(
-                      color: Colors.transparent,
-                      borderRadius: BorderRadius.circular(2000),
-                      border: Border.all(
-                        width: 2,
-                        color: Colors
-                            .transparent, // خود border رنگ نمی‌دیم چون می‌خوایم gradient بشه
-                      ),
-                    ),
-                    child: ShaderMask(
-                      shaderCallback: (bounds) => LinearGradient(
-                        colors: [Color(0xffE3C985), Color(0xffA69464)],
-                      ).createShader(bounds),
-                      child: Container(
-                        width: size.width / 9.53,
-                        height: size.width / 30,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(2000),
-                          border: Border.all(
-                            width: 2,
-                            color: Colors.white, // این رنگ میره زیر gradient
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      ShaderMask(
-                        shaderCallback: (bounds) => LinearGradient(
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
-                          colors: [
-                            Color(0xffE3C985),
-                            Color(0xffA69464)
-                          ], // رنگ‌های گرادیانت برای تکست
-                        ).createShader(bounds),
-                        child: Text(
-                          'Learn More',
-                          style: TextStyle(
-                              fontSize: size.width / 90,
-                              color: MyColor.white,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              )
+              
             ],
           ),
           SizedBox(
