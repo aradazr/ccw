@@ -1,7 +1,9 @@
 import 'package:ccw/constans/my_color.dart';
 import 'package:ccw/constans/responsive_utiles.dart';
 import 'package:ccw/screens/mobile/mabout_us_screen.dart';
+import 'package:ccw/screens/mobile/mcontact_us_screen.dart';
 import 'package:ccw/screens/mobile/mhome_screen.dart';
+import 'package:ccw/screens/mobile/mrecources_screen.dart';
 import 'package:ccw/screens/mobile/mservices_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -103,22 +105,38 @@ class MdrawerScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text(
-                  'Resources',
-                  style: TextStyle(
-                    fontSize:
-                        ResponsiveMobileUtils.getResponsiveSize(context, 20),
-                    fontWeight: FontWeight.w200,
-                    color: MyColor.white,
+                GestureDetector(
+                   onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>  MrecourcesScreen(),
+                    ),
+                  ),
+                  child: Text(
+                    'Resources',
+                    style: TextStyle(
+                      fontSize:
+                          ResponsiveMobileUtils.getResponsiveSize(context, 20),
+                      fontWeight: FontWeight.w200,
+                      color: MyColor.white,
+                    ),
                   ),
                 ),
-                Text(
-                  'Contact US',
-                  style: TextStyle(
-                    fontSize:
-                        ResponsiveMobileUtils.getResponsiveSize(context, 20),
-                    fontWeight: FontWeight.w200,
-                    color: MyColor.white,
+                GestureDetector(
+                   onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const McontactUsScreen(),
+                    ),
+                  ),
+                  child: Text(
+                    'Contact US',
+                    style: TextStyle(
+                      fontSize:
+                          ResponsiveMobileUtils.getResponsiveSize(context, 20),
+                      fontWeight: FontWeight.w200,
+                      color: MyColor.white,
+                    ),
                   ),
                 ),
                 GestureDetector(

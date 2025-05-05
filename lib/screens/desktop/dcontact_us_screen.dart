@@ -108,27 +108,38 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
 
     final emailError = validateEmail(email);
     if (emailError != null) {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text(emailError)));
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.red,
+          behavior: SnackBarBehavior.floating,
+          content: Text(emailError)));
       return;
     }
 
     if (message.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Please enter a message.')),
+        SnackBar(
+            backgroundColor: Colors.red,
+            behavior: SnackBarBehavior.floating,
+            content: Text('Please enter a message.')),
       );
       return;
     }
 
     if (captchaInput != (num1 + num2).toString()) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('The captcha is incorrect.')),
+        SnackBar(
+            backgroundColor: Colors.red,
+            behavior: SnackBarBehavior.floating,
+            content: Text('The captcha is incorrect.')),
       );
       return;
     }
     if (isDisposableEmail(email)) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Please use a valid email address.')),
+        SnackBar(
+            backgroundColor: Colors.red,
+            behavior: SnackBarBehavior.floating,
+            content: Text('Please use a valid email address.')),
       );
       return;
     }
@@ -177,8 +188,8 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
           SnackBar(
             behavior: SnackBarBehavior.floating,
             backgroundColor: Colors.green,
-            content: Text('Message sent successfully!'),),
-
+            content: Text('Message sent successfully!'),
+          ),
         );
       }
     } on DioException catch (e) {
@@ -533,22 +544,23 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
                               ),
                             ),
                             Padding(
-                              padding:  EdgeInsets.only(
-                                top: ResponsiveDesktopUtils.getResponsiveSize(
-                                    context, 160),
-                                left: ResponsiveDesktopUtils.getResponsiveSize(context, 40)),
+                              padding: EdgeInsets.only(
+                                  top: ResponsiveDesktopUtils.getResponsiveSize(
+                                      context, 160),
+                                  left:
+                                      ResponsiveDesktopUtils.getResponsiveSize(
+                                          context, 40)),
                               child: Column(
-                                spacing: ResponsiveDesktopUtils.getResponsiveSize(
-                                    context, 65),
+                                spacing:
+                                    ResponsiveDesktopUtils.getResponsiveSize(
+                                        context, 65),
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   SizedBox(
-                                    height:
-                                        ResponsiveDesktopUtils.getResponsiveSize(
-                                            context, 55),
-                                    width:
-                                        ResponsiveDesktopUtils.getResponsiveSize(
-                                            context, 595),
+                                    height: ResponsiveDesktopUtils
+                                        .getResponsiveSize(context, 55),
+                                    width: ResponsiveDesktopUtils
+                                        .getResponsiveSize(context, 595),
                                     child: TextField(
                                       keyboardType: TextInputType.emailAddress,
                                       controller: emailController,
@@ -570,7 +582,7 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
                                               color: Colors
                                                   .white), // خط زیر وقتی غیرفعال است
                                         ),
-                                        
+
                                         focusedBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
                                               color: Colors
@@ -581,12 +593,10 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
                                     ),
                                   ),
                                   SizedBox(
-                                    height:
-                                        ResponsiveDesktopUtils.getResponsiveSize(
-                                            context, 55),
-                                    width:
-                                        ResponsiveDesktopUtils.getResponsiveSize(
-                                            context, 595),
+                                    height: ResponsiveDesktopUtils
+                                        .getResponsiveSize(context, 55),
+                                    width: ResponsiveDesktopUtils
+                                        .getResponsiveSize(context, 595),
                                     child: TextField(
                                       controller: messageController,
                                       style: TextStyle(
@@ -645,11 +655,12 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
                                                         .white, // رنگ استروک
                                                     width: 1, // ضخامت خط
                                                   ),
-                                                  borderRadius: BorderRadius.circular(
-                                                      ResponsiveDesktopUtils
-                                                          .getResponsiveSize(
-                                                              context,
-                                                              10)), // اختیاری، برای گوشه‌های گرد
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          ResponsiveDesktopUtils
+                                                              .getResponsiveSize(
+                                                                  context,
+                                                                  10)), // اختیاری، برای گوشه‌های گرد
                                                 ),
                                                 child: Text(
                                                   '$num1 + $num2',
@@ -673,19 +684,18 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
                                                           context, 81),
                                                   decoration: BoxDecoration(
                                                     gradient: LinearGradient(
-                                                        begin:
-                                                            Alignment.bottomRight,
+                                                        begin: Alignment
+                                                            .bottomRight,
                                                         end: Alignment.topLeft,
                                                         colors: [
                                                           MyColor.secendry,
                                                           MyColor.third
                                                         ]),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            ResponsiveDesktopUtils
-                                                                .getResponsiveSize(
-                                                                    context,
-                                                                    10)), // اختیاری، برای گوشه‌های گرد
+                                                    borderRadius: BorderRadius.circular(
+                                                        ResponsiveDesktopUtils
+                                                            .getResponsiveSize(
+                                                                context,
+                                                                10)), // اختیاری، برای گوشه‌های گرد
                                                   ),
                                                   child: Image.asset(
                                                       'assets/images/refresh.png',
@@ -706,26 +716,30 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
                                             height: ResponsiveDesktopUtils
                                                 .getResponsiveSize(context, 50),
                                             width: ResponsiveDesktopUtils
-                                                .getResponsiveSize(context, 278),
+                                                .getResponsiveSize(
+                                                    context, 278),
                                             child: TextField(
-                                              keyboardType: TextInputType.number,
+                                              keyboardType:
+                                                  TextInputType.number,
                                               controller: captchaController,
                                               textAlign: TextAlign
                                                   .center, // وسط‌چین کردن متن و hint به صورت افقی
-                                              style:
-                                                  TextStyle(color: Colors.white),
+                                              style: TextStyle(
+                                                  color: Colors.white),
                                               decoration: InputDecoration(
                                                 hintText:
                                                     'Enter the correct answer',
                                                 hintStyle: TextStyle(
-                                                  fontSize: ResponsiveDesktopUtils
-                                                      .getResponsiveSize(
-                                                          context, 14),
+                                                  fontSize:
+                                                      ResponsiveDesktopUtils
+                                                          .getResponsiveSize(
+                                                              context, 14),
                                                   color: MyColor.grey,
                                                 ),
                                                 fillColor: Colors.transparent,
                                                 filled: true,
-                                                enabledBorder: OutlineInputBorder(
+                                                enabledBorder:
+                                                    OutlineInputBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           ResponsiveDesktopUtils
@@ -735,7 +749,8 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
                                                       color: Colors.white,
                                                       width: 1),
                                                 ),
-                                                focusedBorder: OutlineInputBorder(
+                                                focusedBorder:
+                                                    OutlineInputBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           ResponsiveDesktopUtils
@@ -745,13 +760,16 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
                                                       color: Colors.white,
                                                       width: 2),
                                                 ),
-                                                contentPadding: EdgeInsets.symmetric(
+                                                contentPadding:
+                                                    EdgeInsets.symmetric(
                                                   vertical: ResponsiveDesktopUtils
                                                       .getResponsiveSize(
-                                                          context, 20), // برای تراز عمودی
+                                                          context,
+                                                          20), // برای تراز عمودی
                                                   horizontal: ResponsiveDesktopUtils
                                                       .getResponsiveSize(
-                                                          context, 10), // برای تراز افقی
+                                                          context,
+                                                          10), // برای تراز افقی
                                                 ),
                                                 // برای تراز عمودی
                                                 isDense:
@@ -765,31 +783,53 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
                                       GestureDetector(
                                         onTap: sendMessage,
                                         child: Container(
-                                          alignment: Alignment.center,
-                                          height: ResponsiveDesktopUtils
-                                              .getResponsiveSize(context, 50),
-                                          width: ResponsiveDesktopUtils
-                                              .getResponsiveSize(context, 214),
-                                          decoration: BoxDecoration(
-                                            gradient: LinearGradient(
-                                                begin: Alignment.bottomRight,
-                                                end: Alignment.topLeft,
-                                                colors: MyColor.linear),
-                                            borderRadius: BorderRadius.circular(
-                                                ResponsiveDesktopUtils
-                                                    .getResponsiveSize(context,
-                                                        10)), // اختیاری، برای گوشه‌های گرد
-                                          ),
-                                          child: Text('Send Message',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  fontSize:
-                                                      ResponsiveDesktopUtils
-                                                          .getResponsiveSize(
-                                                              context, 16),
-                                                  color: MyColor.white,
-                                                  fontWeight: FontWeight.w200))
-                                        ),
+                                            alignment: Alignment.center,
+                                            height: ResponsiveDesktopUtils
+                                                .getResponsiveSize(context, 50),
+                                            width: ResponsiveDesktopUtils
+                                                .getResponsiveSize(
+                                                    context, 214),
+                                            decoration: BoxDecoration(
+                                              gradient: LinearGradient(
+                                                  begin: Alignment.bottomRight,
+                                                  end: Alignment.topLeft,
+                                                  colors: MyColor.linear),
+                                              borderRadius: BorderRadius.circular(
+                                                  ResponsiveDesktopUtils
+                                                      .getResponsiveSize(
+                                                          context,
+                                                          10)), // اختیاری، برای گوشه‌های گرد
+                                            ),
+                                            child: isSending
+                                                ? Center(
+                                                    child: SizedBox(
+                                                      height:
+                                                          ResponsiveDesktopUtils
+                                                              .getResponsiveSize(
+                                                                  context, 20),
+                                                      width:
+                                                          ResponsiveDesktopUtils
+                                                              .getResponsiveSize(
+                                                                  context, 20),
+                                                      child:
+                                                          CircularProgressIndicator(
+                                                              strokeAlign: 1,
+                                                              strokeWidth: 2,
+                                                              color:
+                                                                  Colors.white),
+                                                    ),
+                                                  )
+                                                : Text('Send Message',
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                        fontSize:
+                                                            ResponsiveDesktopUtils
+                                                                .getResponsiveSize(
+                                                                    context,
+                                                                    16),
+                                                        color: MyColor.white,
+                                                        fontWeight:
+                                                            FontWeight.w200))),
                                       )
                                     ],
                                   ),
@@ -805,13 +845,12 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
               ),
             ),
             SizedBox(
-              height: size.width/8.78,
+              height: size.width / 8.78,
             ),
             Footer(size: size)
           ],
         ),
       ),
     );
-    
   }
 }
