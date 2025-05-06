@@ -11,7 +11,7 @@ import 'package:ccw/screens/mobile/mmeet_our_expert_screen.dart';
 import 'package:ccw/screens/mobile/mobile_drawer_screen.dart';
 import 'package:ccw/screens/mobile/mrecources_screen.dart';
 import 'package:ccw/screens/mobile/mservices_screen.dart';
-import 'package:ccw/screens/msplash_screen.dart';
+import 'package:ccw/screens/splash_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';

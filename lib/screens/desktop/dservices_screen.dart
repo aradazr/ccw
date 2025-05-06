@@ -140,34 +140,31 @@ class _DservicesScreenState extends State<DservicesScreen> {
                       ],
                     ),
                   ),
-                  Positioned(
-                    top: 0,
-                    child: MyAppbar(
-                      size: size,
-                      homeStyle: TextStyle(
-                          fontSize: size.width / 90,
-                          color: MyColor.white,
-                          fontWeight: FontWeight.w200),
-                      aboutStyle: TextStyle(
-                          fontSize: size.width / 90,
-                          color: MyColor.white,
-                          fontWeight: FontWeight.w200),
-                      servicesStyle: TextStyle(
-                           decoration: TextDecoration.underline,
-                          decorationThickness: 1,
-                          decorationColor: MyColor.primary,
-                          fontSize: size.width / 90,
-                          color: MyColor.primary,
-                          fontWeight: FontWeight.w200),
-                      resourcesStyle: TextStyle(
-                          fontSize: size.width / 90,
-                          color: MyColor.white,
-                          fontWeight: FontWeight.w200),
-                      contactStyle: TextStyle(
-                          fontSize: size.width / 90,
-                          color: MyColor.white,
-                          fontWeight: FontWeight.w200),
-                    ),
+                  MyAppbar(
+                    size: size,
+                    homeStyle: TextStyle(
+                        fontSize: size.width / 90,
+                        color: MyColor.white,
+                        fontWeight: FontWeight.w200),
+                    aboutStyle: TextStyle(
+                        fontSize: size.width / 90,
+                        color: MyColor.white,
+                        fontWeight: FontWeight.w200),
+                    servicesStyle: TextStyle(
+                         decoration: TextDecoration.underline,
+                        decorationThickness: 1,
+                        decorationColor: MyColor.primary,
+                        fontSize: size.width / 90,
+                        color: MyColor.primary,
+                        fontWeight: FontWeight.w200),
+                    resourcesStyle: TextStyle(
+                        fontSize: size.width / 90,
+                        color: MyColor.white,
+                        fontWeight: FontWeight.w200),
+                    contactStyle: TextStyle(
+                        fontSize: size.width / 90,
+                        color: MyColor.white,
+                        fontWeight: FontWeight.w200),
                   ),
                 ],
               ),
@@ -175,56 +172,54 @@ class _DservicesScreenState extends State<DservicesScreen> {
             SizedBox(
               height: ResponsiveDesktopUtils.getResponsiveSize(context, 94),
             ),
-            Positioned(
-              top: ResponsiveDesktopUtils.getResponsiveSize(context, 447),
-              child: SizedBox(
-                width: ResponsiveDesktopUtils.getResponsiveSize(context, 1440),
-                child: VisibilityDetector(
-                  key: Key('wrap'),
-                  onVisibilityChanged: (visibilityInfo) {
-                    if (visibilityInfo.visibleFraction > 0.2 && !_isVisible) {
-                      setState(
-                        () {
-                          _isVisible = true;
-                        },
-                      );
-                    }
-                  },
-                  child: Wrap(
-                    spacing:
-                        ResponsiveDesktopUtils.getResponsiveSize(context, 48),
-                    runSpacing:
-                        ResponsiveDesktopUtils.getResponsiveSize(context, 80),
-                    direction: Axis.horizontal,
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    runAlignment: WrapAlignment.center,
-                    alignment: WrapAlignment.center,
-                    children: List.generate(serviceList.length, (index) {
-                      final item = serviceList[index];
-                      return SizedBox(
-                        width: ResponsiveDesktopUtils.getResponsiveSize(
-                            context, 543),
-                        height: ResponsiveDesktopUtils.getResponsiveSize(
-                            context, 282),
-                        child: item
-                            .animate(target: _isVisible ? 1 : 0)
-                            .slideX(
-                              begin: 1,
-                              end: 0,
-                              duration: 600.ms,
-                              delay: (index * 200).ms, // تأخیر بر اساس ایندکس
-                            )
-                            .fade(
-                              duration: 500.ms,
-                              delay: (index * 200).ms,
-                            )
-                            .shimmer(
-                              delay: (index * 200).ms,
-                              duration: 1500.ms,
-                            ),
-                      );
-                    }),
-                  ),
+            SizedBox(
+              width: ResponsiveDesktopUtils.getResponsiveSize(context, 1440),
+              height: ResponsiveDesktopUtils.getResponsiveSize(context, 1440),
+              child: VisibilityDetector(
+                key: Key('wrap'),
+                onVisibilityChanged: (visibilityInfo) {
+                  if (visibilityInfo.visibleFraction > 0.2 && !_isVisible) {
+                    setState(
+                      () {
+                        _isVisible = true;
+                      },
+                    );
+                  }
+                },
+                child: Wrap(
+                  spacing:
+                      ResponsiveDesktopUtils.getResponsiveSize(context, 48),
+                  runSpacing:
+                      ResponsiveDesktopUtils.getResponsiveSize(context, 80),
+                  direction: Axis.horizontal,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  runAlignment: WrapAlignment.center,
+                  alignment: WrapAlignment.center,
+                  children: List.generate(serviceList.length, (index) {
+                    final item = serviceList[index];
+                    return SizedBox(
+                      width: ResponsiveDesktopUtils.getResponsiveSize(
+                          context, 543),
+                      height: ResponsiveDesktopUtils.getResponsiveSize(
+                          context, 282),
+                      child: item
+                          .animate(target: _isVisible ? 1 : 0)
+                          .slideX(
+                            begin: 1,
+                            end: 0,
+                            duration: 600.ms,
+                            delay: (index * 200).ms, // تأخیر بر اساس ایندکس
+                          )
+                          .fade(
+                            duration: 500.ms,
+                            delay: (index * 200).ms,
+                          )
+                          .shimmer(
+                            delay: (index * 200).ms,
+                            duration: 1500.ms,
+                          ),
+                    );
+                  }),
                 ),
               ),
             ),

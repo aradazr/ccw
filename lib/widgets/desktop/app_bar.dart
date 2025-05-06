@@ -61,10 +61,8 @@ class MyAppbar extends StatelessWidget {
               ),
               SizedBox(width: size.width / 60),
               GestureDetector(
-                onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const DservicesScreen())),
+                onTap: () => Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => DservicesScreen())),
                 child: HoverText(text: 'Services', defaultStyle: servicesStyle),
               ),
               SizedBox(width: size.width / 60),
@@ -72,7 +70,7 @@ class MyAppbar extends StatelessWidget {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>  DresourcesScreen(),
+                    builder: (context) => DresourcesScreen(),
                   ),
                 ),
                 child:

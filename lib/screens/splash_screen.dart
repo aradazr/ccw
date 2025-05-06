@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:ccw/constans/my_color.dart';
 import 'package:ccw/constans/responsive_utiles.dart';
-import 'package:ccw/screens/desktop/dhome_screen.dart'; // ایمپورت صفحه دسکتاپ
+import 'package:ccw/screens/desktop/dhome_screen.dart';
 import 'package:ccw/screens/mobile/mhome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -18,12 +18,80 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _checkConnection();
+    _prepareApp();
   }
 
-  Future<void> _checkConnection() async {
-    await Future.delayed(const Duration(seconds: 2)); // برای نمایش لوگو و لودینگ
+  Future<void> _prepareApp() async {
+    await Future.delayed(const Duration(milliseconds: 500)); // برای نمای اولیه
 
+    await _precacheImages();
+
+    await _checkConnectionAndNavigate();
+  }
+
+  Future<void> _precacheImages() async {
+    final List<String> imageAssets = [
+      'assets/images/aboutusPeople.png',
+      'assets/images/accounting.png',
+      'assets/images/advisory.png',
+      'assets/images/arrow.png',
+      'assets/images/arrowDown.png',
+      'assets/images/call.png',
+      'assets/images/ccwLogo.png',
+      'assets/images/circularArrow.png',
+      'assets/images/clientFocused.png',
+      'assets/images/cLogo.png',
+      'assets/images/closeDrawer.png',
+      'assets/images/commitment.png',
+      'assets/images/compliance.png',
+      'assets/images/corporate.png',
+      'assets/images/curvShape.png',
+      'assets/images/decadesIcon.png',
+      'assets/images/dservices.png',
+      'assets/images/email.png',
+      'assets/images/excellence.png',
+      'assets/images/expertAccounting.png',
+      'assets/images/eyeIcon.png',
+      'assets/images/flyingLetter.png',
+      'assets/images/goldArrow.png',
+      'assets/images/greenBlur.png',
+      'assets/images/greenBlur2.png',
+      'assets/images/greyBlur.png',
+      'assets/images/individualIcon.png',
+      'assets/images/leadership.png',
+      'assets/images/location.png',
+      'assets/images/map.png',
+      'assets/images/menu.png',
+      'assets/images/mobileAboutUsPeople.png',
+      'assets/images/mobileMap.png',
+      'assets/images/mobileResources.png',
+      'assets/images/mobileSpace.png',
+      'assets/images/operationIcon.png',
+      'assets/images/ourFirm.png',
+      'assets/images/ownerIcon.png',
+      'assets/images/parham.png',
+      'assets/images/peapole.png',
+      'assets/images/personal.png',
+      'assets/images/personalized.png',
+      'assets/images/realState.png',
+      'assets/images/recources.png',
+      'assets/images/refresh.png',
+      'assets/images/reliableService.png',
+      'assets/images/seamless.png',
+      'assets/images/selfEmploydIcon.png',
+      'assets/images/services.png',
+      'assets/images/smallIcon.png',
+      'assets/images/smoothConnectivity.png',
+      'assets/images/space.png',
+      'assets/images/trust.png',
+    ];
+
+    for (String asset in imageAssets) {
+      await precacheImage(AssetImage(asset), context);
+    }
+  }
+
+  Future<void> _checkConnectionAndNavigate() async {
     var connectivityResult = await Connectivity().checkConnectivity();
     bool connected = connectivityResult != ConnectivityResult.none;
 
@@ -43,7 +111,8 @@ class _SplashScreenState extends State<SplashScreen> {
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('اتصال به اینترنت برقرار نیست.'),
+          behavior: SnackBarBehavior.floating,
+          content: Text('No internet connection.'),
           backgroundColor: Colors.red,
         ),
       );
