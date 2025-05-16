@@ -46,21 +46,21 @@ class _MmeetOurExpertScreenState extends State<MmeetOurExpertScreen> {
       {
         "title": "Retired Partner (Advisor)",
         "name": "Brian Cawley, CPA, CA",
-        "image": "assets/images/parham.png",
+        "image": "assets/images/brian.png",
         "description":
             "With over 40 years of experience, Brian Cawley has been a trusted advisor to owner-operated businesses since 1985. His extensive tax knowledge and deep understanding of the financial challenges faced by entrepreneurs have made him a cornerstone in the industry. Brian’s commitment to providing tailored solutions has helped countless business owners navigate the complexities of taxation and financial planning. As he transitions into retirement, his legacy continues through the firm, ensuring that clients receive the same level of expertise and personalized service."
       },
       {
         "title": "CPA Student",
         "name": "Kantaro Horino",
-        "image": "assets/images/parham.png",
+        "image": "assets/images/kantaro.png",
         "description":
             "Kantaro Horino is a dedicated CPA student with a strong passion for accounting and tax services. Born and raised in Vancouver, BC, he is fluent in both English and Japanese. He holds a Business degree from the University of Victoria and has gained valuable experience through multiple internships before returning to CCW CPA as a tax accountant to pursue his CPA designation. With a keen eye for detail and a deep understanding of financial management and tax preparation, Kantaro is committed to delivering high-quality services by ensuring accurate financial reporting and full regulatory compliance. Under the mentorship of seasoned professionals, he continues to develop his expertise in taxation and financial advisory, making him a valuable asset to both the firm and our clients."
       },
       {
         "title": "Administrative Specialist",
         "name": "Colette Lam",
-        "image": "assets/images/parham.png",
+        "image": "assets/images/colette.png",
         "description":
             "Since joining CCW CPA in 2013, Colette Lam has been a key pillar of stability and efficiency within the firm. With years of experience in public practice, she plays a crucial role in ensuring the seamless operation of our firm, particularly during the busiest seasons. Highly organized and detail-oriented, Colette excels in problem-solving, eƯective communication, and client service, consistently going beyond the scope of her administrative role to support both the team and our clients. Her deep knowledge of administrative processes and unwavering commitment to excellence contribute significantly to the professionalism and success of CCW CPA."
       }

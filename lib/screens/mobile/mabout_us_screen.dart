@@ -101,7 +101,7 @@ class _MaboutUsScreenState extends State<MaboutUsScreen> {
                                 displayFullTextOnTap: true,
                                 animatedTexts: [
                                   TypewriterAnimatedText(
-                                    speed: Duration(milliseconds: 20),
+                                      speed: Duration(milliseconds: 20),
                                       cursor: '',
                                       textStyle: TextStyle(
                                           fontSize: ResponsiveMobileUtils
@@ -115,14 +115,14 @@ class _MaboutUsScreenState extends State<MaboutUsScreen> {
                           ),
                           SizedBox(
                             height: ResponsiveMobileUtils.getResponsiveSize(
-                                context, 94),
+                                context, 100),
                           ),
                         ],
                       ),
                     ),
                   ),
                   Positioned(
-                    top: ResponsiveMobileUtils.getResponsiveSize(context, 253),
+                    top: ResponsiveMobileUtils.getResponsiveSize(context, 270),
                     child: GestureDetector(
                       onTap: () => Navigator.push(
                         context,
@@ -165,8 +165,8 @@ class _MaboutUsScreenState extends State<MaboutUsScreen> {
                                     width:
                                         ResponsiveMobileUtils.getResponsiveSize(
                                             context, 2),
-                                    color:
-                                        Colors.white, // این رنگ میره زیر gradient
+                                    color: Colors
+                                        .white, // این رنگ میره زیر gradient
                                   ),
                                 ),
                               ),
@@ -248,24 +248,26 @@ class _MaboutUsScreenState extends State<MaboutUsScreen> {
                     SizedBox(
                       width:
                           ResponsiveMobileUtils.getResponsiveSize(context, 363),
-                          height: ResponsiveMobileUtils.getResponsiveSize(context, 221),
+                      height:
+                          ResponsiveMobileUtils.getResponsiveSize(context, 221),
                       child: AnimatedTextKit(
-                        repeatForever: false,
-                    isRepeatingAnimation: false,
-                    displayFullTextOnTap: true,
-                        animatedTexts:[ 
-                        TypewriterAnimatedText(
-                          cursor: '',
-                        speed: Duration(milliseconds: 20),
-                            textStyle: TextStyle(
-                                fontSize: ResponsiveMobileUtils.getResponsiveSize(
-                                  context,
-                                  12,
-                                ),
-                                color: MyColor.grey),
-                            'At CCW CPA, we are more than just accountants—we are strategic partners dedicated to your financial success. With decades of experience in tax, accounting, and business advisory services, we help individuals and businesses navigate the complexities of financial management with clarity and confidence.As a firm built on trust, expertise, and innovation, we prioritize personalized service, ensuring that every client receives solutions tailored to their specific needs. Whether you’re a business owner seeking tax optimization, an investor looking for strategic planning, or an individual in need of financial guidance, we are here to help you make informed decisions with confidence.',
-                            ),]
-                      ),
+                          repeatForever: false,
+                          isRepeatingAnimation: false,
+                          displayFullTextOnTap: true,
+                          animatedTexts: [
+                            TypewriterAnimatedText(
+                              cursor: '',
+                              speed: Duration(milliseconds: 20),
+                              textStyle: TextStyle(
+                                  fontSize:
+                                      ResponsiveMobileUtils.getResponsiveSize(
+                                    context,
+                                    12,
+                                  ),
+                                  color: MyColor.grey),
+                              'At CCW CPA, we are more than just accountants—we are strategic partners dedicated to your financial success. With decades of experience in tax, accounting, and business advisory services, we help individuals and businesses navigate the complexities of financial management with clarity and confidence.As a firm built on trust, expertise, and innovation, we prioritize personalized service, ensuring that every client receives solutions tailored to their specific needs. Whether you’re a business owner seeking tax optimization, an investor looking for strategic planning, or an individual in need of financial guidance, we are here to help you make informed decisions with confidence.',
+                            ),
+                          ]),
                     ),
                   ],
                 ),
@@ -315,12 +317,14 @@ class _MaboutUsScreenState extends State<MaboutUsScreen> {
                       "title": "Our Firm",
                       "description":
                           "CCW CPA is a professional accounting firm with a reputation for excellence. Under the leadership of Parham Alizadehkia, CPA, our firm continues to build on a strong foundation, ensuring seamless transitions and continuity of service. Brian Cawley, CPA, CA who built this practice over decades, remains an invaluable part of our team as an advisor, helping to guide the next generation of financial professionals. We take a proactive approach to accounting, taxation, and financial advisory services. Our goal goes further than to ensure compliance but to help our clients maximize profitability, minimize risk, and plan for long-term success. Through our deep understanding of tax regulations and financial strategies, we position businesses and individuals for growth, stability, and success in an ever-evolving economic landscape.",
-"image": "assets/images/recources.png"                    },
+                      "image": "assets/images/recources.png"
+                    },
                     {
                       "title": "Our Mission",
                       "description":
                           "Our mission is to empower businesses and individuals with trusted financial guidance, expert accounting services, and personalized tax strategies. We are committed to delivering solutions that help our clients achieve their financial goals while maintaining the highest levels of accuracy and professionalism.",
-"image": "assets/images/recources.png"                    },
+                      "image": "assets/images/recources.png"
+                    },
                     {
                       "title": "Our Vision",
                       "description":

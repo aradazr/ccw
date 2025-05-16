@@ -1,6 +1,9 @@
 import 'dart:math';
 
 import 'package:ccw/constans/my_color.dart';
+import 'package:ccw/screens/desktop/dabout_us_screen.dart';
+import 'package:ccw/screens/desktop/dcontact_us_screen.dart';
+import 'package:ccw/screens/desktop/dservices_screen.dart';
 import 'package:ccw/widgets/desktop/app_bar.dart';
 import 'package:ccw/widgets/desktop/footer.dart';
 import 'package:ccw/widgets/desktop/home_three_container.dart';
@@ -52,100 +55,109 @@ class _DhomeScreenState extends State<DhomeScreen> {
                           decoration: TextDecoration.underline,
                           decorationThickness: 1,
                           decorationColor: MyColor.primary,
-                          fontSize: size.width/90,
+                          fontSize: size.width / 90,
                           color: MyColor.primary,
                           fontWeight: FontWeight.w200),
                       aboutStyle: TextStyle(
-                          fontSize: size.width/90,
+                          fontSize: size.width / 90,
                           color: MyColor.white,
                           fontWeight: FontWeight.w200),
                       servicesStyle: TextStyle(
-                          fontSize: size.width/90,
+                          fontSize: size.width / 90,
                           color: MyColor.white,
                           fontWeight: FontWeight.w200),
                       resourcesStyle: TextStyle(
-                          fontSize: size.width/90,
+                          fontSize: size.width / 90,
                           color: MyColor.white,
                           fontWeight: FontWeight.w200),
                       contactStyle: TextStyle(
-                          fontSize: size.width/90,
+                          fontSize: size.width / 90,
                           color: MyColor.white,
                           fontWeight: FontWeight.w200),
                     ),
                   ),
                   Positioned(
-                    top: size.width/7.34,
+                    top: size.width / 7.34,
                     child: Column(
                       children: [
                         Text(
                           'Financial Clarity , Trusted Guidance',
                           style: TextStyle(
-                              fontSize: size.width/30,
+                              fontSize: size.width / 30,
                               color: MyColor.white,
                               fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(height: size.width/57.6),
+                        SizedBox(height: size.width / 57.6),
                         SizedBox(
                             width: size.width / 2.29,
                             child: Text(
                               textAlign: TextAlign.center,
                               'Helping business owners streamline accounting, optimize tax strategies, and stay compliant- so you can focus on what you do best',
                               style: TextStyle(
-                                  fontSize: size.width/72,
+                                  fontSize: size.width / 72,
                                   color: MyColor.white,
                                   fontWeight: FontWeight.w200),
                             )),
-                        SizedBox(height: size.width/51.42),
+                        SizedBox(height: size.width / 51.42),
                         Row(
-                          spacing: size.width/57.6,
+                          spacing: size.width / 57.6,
                           children: [
-                            Container(
-                                alignment: Alignment.center,
-                                height: size.width/25.71,
-                                width: size.width /7.34,
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: MyColor.white, width: 2),
-                                    borderRadius: BorderRadius.circular(100)),
-                                child: Text(
-                                  'Get Started Today',
-                                  style: TextStyle(
-                                      color: MyColor.white,
-                                      fontSize: size.width/80,
-                                      fontWeight: FontWeight.bold),
-                                )),
-                            Container(
-                                alignment: Alignment.center,
-                                height: size.width/25.71,
-                                width: size.width /7.34,
-                                decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                        begin: Alignment.centerLeft,
-                                        end: Alignment.centerRight,
-                                        colors: MyColor.linear),
-                                    borderRadius: BorderRadius.circular(100)),
-                                child: Text(
-                                  'Read our Story',
-                                  style: TextStyle(
-                                      color: MyColor.white,
-                                      fontSize: size.width/80,
-                                      fontWeight: FontWeight.bold),
-                                )),
-                            Container(
-                                alignment: Alignment.center,
-                                height: size.width/25.71,
-                                width: size.width /7.34,
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: MyColor.white, width: 2),
-                                    borderRadius: BorderRadius.circular(100)),
-                                child: Text(
-                                  'See How We Help',
-                                  style: TextStyle(
-                                      color: MyColor.white,
-                                      fontSize: size.width /80,
-                                      fontWeight: FontWeight.bold),
-                                )),
+                            GestureDetector(
+                              onTap: () => Navigator.push(context,  MaterialPageRoute(builder: (context) => DcontactUsScreen(),)),
+                              child: Container(
+                                  alignment: Alignment.center,
+                                  height: size.width / 25.71,
+                                  width: size.width / 7.34,
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                          color: MyColor.white, width: 2),
+                                      borderRadius: BorderRadius.circular(100)),
+                                  child: Text(
+                                    'Get Started Today',
+                                    style: TextStyle(
+                                        color: MyColor.white,
+                                        fontSize: size.width / 80,
+                                        fontWeight: FontWeight.bold),
+                                  )),
+                            ),
+                            GestureDetector(
+                               onTap: () => Navigator.push(context,  MaterialPageRoute(builder: (context) => DaboutUsScreen(),)),
+                              child: Container(
+                                  alignment: Alignment.center,
+                                  height: size.width / 25.71,
+                                  width: size.width / 7.34,
+                                  decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                          begin: Alignment.centerLeft,
+                                          end: Alignment.centerRight,
+                                          colors: MyColor.linear),
+                                      borderRadius: BorderRadius.circular(100)),
+                                  child: Text(
+                                    'Read our Story',
+                                    style: TextStyle(
+                                        color: MyColor.white,
+                                        fontSize: size.width / 80,
+                                        fontWeight: FontWeight.bold),
+                                  )),
+                            ),
+                            GestureDetector(
+                               onTap: () => Navigator.push(context,  MaterialPageRoute(builder: (context) => DservicesScreen(),)),
+                              child: Container(
+                                  alignment: Alignment.center,
+                                  height: size.width / 25.71,
+                                  width: size.width / 7.34,
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                          color: MyColor.white, width: 2),
+                                      borderRadius: BorderRadius.circular(100)),
+                                  child: Text(
+                                    'See How We Help',
+                                    style: TextStyle(
+                                        color: MyColor.white,
+                                        fontSize: size.width / 80,
+                                        fontWeight: FontWeight.bold),
+                                  )),
+                            ),
                           ],
                         ),
                       ],
@@ -154,12 +166,12 @@ class _DhomeScreenState extends State<DhomeScreen> {
 
                   //* 3 container with icon and title and description
                   Positioned(
-                      top: size.width /2.8,
+                      top: size.width / 2.8,
                       child: Wrap(
                         crossAxisAlignment: WrapCrossAlignment.center,
                         runAlignment: WrapAlignment.center,
                         alignment: WrapAlignment.center,
-                        spacing: size.width/90,
+                        spacing: size.width / 90,
                         children: [
                           ThreeContainer(
                             title: 'Smooth Connectivity',
@@ -221,7 +233,7 @@ class _DhomeScreenState extends State<DhomeScreen> {
               ),
             ),
             SizedBox(
-              height: size.width/7.2,
+              height: size.width / 7.2,
             ),
             //! wrap number one with 5 container and animation with shimmer have icon, title and description
             Text(
@@ -233,25 +245,25 @@ class _DhomeScreenState extends State<DhomeScreen> {
                   fontWeight: FontWeight.w600),
             ),
             SizedBox(
-              height: size.width/80,
+              height: size.width / 80,
             ),
             Text(
               textAlign: TextAlign.center,
               'At CCW CPA, we specialize in providing expert accounting and tax services for:',
               style: TextStyle(
-                  fontSize: size.width/80,
+                  fontSize: size.width / 80,
                   color: MyColor.white,
                   fontWeight: FontWeight.w400),
             ),
             SizedBox(
-              height: size.width/13.21,
+              height: size.width / 13.21,
             ),
             SizedBox(
-              height: size.width/1.6,
+              height: size.width / 1.6,
               width: size.width / 1,
               child: Wrap(
-                spacing: size.width/5.76,
-                runSpacing: size.width/23.22,
+                spacing: size.width / 5.76,
+                runSpacing: size.width / 23.22,
                 direction: Axis.horizontal,
                 crossAxisAlignment: WrapCrossAlignment.center,
                 runAlignment: WrapAlignment.center,
@@ -321,26 +333,26 @@ class _DhomeScreenState extends State<DhomeScreen> {
               ),
             ),
             SizedBox(
-              height: size.width/11.33,
+              height: size.width / 11.33,
             ),
 
             //! wrap number two with 4 container and animation with shimmer have icon, title and description
             Text(
               'Why Choose CCW',
               style: TextStyle(
-                  fontSize: size.width/40,
+                  fontSize: size.width / 40,
                   color: MyColor.secendry,
                   fontWeight: FontWeight.w600),
             ),
             SizedBox(
-              height:  size.width/20,
+              height: size.width / 20,
             ),
             Wrap(
               alignment: WrapAlignment.center,
               crossAxisAlignment: WrapCrossAlignment.center,
               runAlignment: WrapAlignment.center,
-              runSpacing: size.width /18,
-              spacing: size.width /32,
+              runSpacing: size.width / 18,
+              spacing: size.width / 32,
               children: List.generate(
                 4,
                 (index) {
@@ -398,12 +410,11 @@ class _DhomeScreenState extends State<DhomeScreen> {
               ),
             ),
             SizedBox(
-              height: size.width/8.78,
+              height: size.width / 8.78,
             ),
             //! footer with logo and map
-            
+
             Footer(size: size),
-            
           ],
         ),
       ),

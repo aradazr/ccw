@@ -1,5 +1,8 @@
 import 'package:ccw/constans/my_color.dart';
 import 'package:ccw/constans/responsive_utiles.dart';
+import 'package:ccw/screens/mobile/mabout_us_screen.dart';
+import 'package:ccw/screens/mobile/mcontact_us_screen.dart';
+import 'package:ccw/screens/mobile/mservices_screen.dart';
 import 'package:ccw/widgets/mobile/mobile_app_bar.dart';
 import 'package:ccw/widgets/mobile/mobile_footer.dart';
 import 'package:ccw/widgets/mobile/mobile_three_container.dart';
@@ -84,7 +87,13 @@ class _MhomeScreenState extends State<MhomeScreen> {
             Column(
               spacing: ResponsiveMobileUtils.getResponsiveSize(context, 8),
               children: [
-                Container(
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MaboutUsScreen(),
+                      )),
+                  child: Container(
                     alignment: Alignment.center,
                     height:
                         ResponsiveMobileUtils.getResponsiveSize(context, 48),
@@ -103,8 +112,16 @@ class _MhomeScreenState extends State<MhomeScreen> {
                           fontSize: ResponsiveMobileUtils.getResponsiveSize(
                               context, 14),
                           fontWeight: FontWeight.bold),
-                    )),
-                Container(
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => McontactUsScreen(),
+                      )),
+                  child: Container(
                     alignment: Alignment.center,
                     height:
                         ResponsiveMobileUtils.getResponsiveSize(context, 48),
@@ -120,21 +137,32 @@ class _MhomeScreenState extends State<MhomeScreen> {
                           fontSize: ResponsiveMobileUtils.getResponsiveSize(
                               context, 14),
                           fontWeight: FontWeight.bold),
-                    )),
-                Container(
-                  alignment: Alignment.center,
-                  height: ResponsiveMobileUtils.getResponsiveSize(context, 48),
-                  width: ResponsiveMobileUtils.getResponsiveSize(context, 371),
-                  decoration: BoxDecoration(
-                      border: Border.all(color: MyColor.white, width: 1),
-                      borderRadius: BorderRadius.circular(100)),
-                  child: Text(
-                    'See How We Help',
-                    style: TextStyle(
-                        color: MyColor.white,
-                        fontSize: ResponsiveMobileUtils.getResponsiveSize(
-                            context, 14),
-                        fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MservicesScreen(),
+                      )),
+                  child: Container(
+                    alignment: Alignment.center,
+                    height:
+                        ResponsiveMobileUtils.getResponsiveSize(context, 48),
+                    width:
+                        ResponsiveMobileUtils.getResponsiveSize(context, 371),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: MyColor.white, width: 1),
+                        borderRadius: BorderRadius.circular(100)),
+                    child: Text(
+                      'See How We Help',
+                      style: TextStyle(
+                          color: MyColor.white,
+                          fontSize: ResponsiveMobileUtils.getResponsiveSize(
+                              context, 14),
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ],
@@ -165,7 +193,7 @@ class _MhomeScreenState extends State<MhomeScreen> {
                     "image": "assets/images/reliableService.png"
                   }
                 ];
-      
+
                 return VisibilityDetector(
                   key: Key('item_$index'),
                   onVisibilityChanged: (info) {
@@ -262,7 +290,7 @@ class _MhomeScreenState extends State<MhomeScreen> {
                       "image": "assets/images/selfEmploydIcon.png"
                     }
                   ];
-      
+
                   return VisibilityDetector(
                     key: Key('item2_$index'),
                     onVisibilityChanged: (info) {
@@ -279,11 +307,14 @@ class _MhomeScreenState extends State<MhomeScreen> {
                         description: data2[index]["description"]!,
                         image: data2[index]["image"]!,
                       )
-                          .animate(target: visibleItems2.contains(index) ? 1 : 0)
-                        .slideX(
-                            begin: 1, end: 0, duration: (400 + index * 200).ms)
-                        .fade(duration: 300.ms, delay: 100.ms)
-                        .shimmer(delay: 100.ms, duration: 1500.ms),
+                          .animate(
+                              target: visibleItems2.contains(index) ? 1 : 0)
+                          .slideX(
+                              begin: 1,
+                              end: 0,
+                              duration: (400 + index * 200).ms)
+                          .fade(duration: 300.ms, delay: 100.ms)
+                          .shimmer(delay: 100.ms, duration: 1500.ms),
                     ),
                   );
                 },
@@ -354,7 +385,7 @@ class _MhomeScreenState extends State<MhomeScreen> {
                       "image": "assets/images/commitment.png",
                     }
                   ];
-      
+
                   return VisibilityDetector(
                     key: Key('item3-$index'),
                     onVisibilityChanged: (VisibilityInfo info) {
@@ -382,14 +413,9 @@ class _MhomeScreenState extends State<MhomeScreen> {
               height: ResponsiveMobileUtils.getResponsiveSize(context, 74),
             ),
             MobileFooter(),
-            
           ],
         ),
       ),
     );
   }
 }
-
-
-
-

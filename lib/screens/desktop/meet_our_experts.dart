@@ -86,7 +86,7 @@ class DmeetOurExperts extends StatelessWidget {
                         ),
                         MeetOurTeam(
                           size: size,
-                          image: 'assets/images/parham.png',
+                          image: 'assets/images/brian.png',
                           name: 'Brian Cawley, CPA, CA',
                           title: 'Retired Partner (Advisor)',
                           subTitle:
@@ -94,7 +94,7 @@ class DmeetOurExperts extends StatelessWidget {
                         ),
                         MeetOurTeam(
                           size: size,
-                          image: 'assets/images/parham.png',
+                          image: 'assets/images/kantaro.png',
                           name: 'Kantaro Horino',
                           title: 'CPA Student',
                           subTitle:
@@ -102,7 +102,7 @@ class DmeetOurExperts extends StatelessWidget {
                         ),
                         MeetOurTeam(
                           size: size,
-                          image: 'assets/images/parham.png',
+                          image: 'assets/images/colette.png',
                           name: 'Colette Lam',
                           title: 'Administrative Specialist',
                           subTitle:
