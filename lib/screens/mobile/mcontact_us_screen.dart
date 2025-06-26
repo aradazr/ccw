@@ -224,7 +224,7 @@ class _McontactUsScreenState extends State<McontactUsScreen> {
                     alignment: Alignment.topCenter,
                     children: [
                       Image.asset(
-                        'assets/images/recources.png',
+                        'assets/images/contactUs.png',
                         height: ResponsiveMobileUtils.getResponsiveSize(
                             context, 377),
                         width: ResponsiveMobileUtils.getResponsiveSize(
@@ -374,7 +374,7 @@ class _McontactUsScreenState extends State<McontactUsScreen> {
                                                                     24),
                                                       ),
                                                       Text(
-                                                        '+1012 3456 789',
+                                                        '(604) 731-1191',
                                                         style: TextStyle(
                                                             fontSize:
                                                                 ResponsiveMobileUtils
@@ -407,7 +407,7 @@ class _McontactUsScreenState extends State<McontactUsScreen> {
                                                                     24),
                                                       ),
                                                       Text(
-                                                        'demo@gmail.com',
+                                                        'info@ccwcpa.ca',
                                                         style: TextStyle(
                                                             fontSize:
                                                                 ResponsiveMobileUtils
@@ -446,7 +446,7 @@ class _McontactUsScreenState extends State<McontactUsScreen> {
                                                         child: Text(
                                                           textAlign:
                                                               TextAlign.center,
-                                                          '132 Dartmouth Street Boston, Massachusetts 02156 United States',
+                                                          'Unit -M-9, 601 West Broadway, Vancouver, V5Z 4C2',
                                                           style: TextStyle(
                                                               fontSize: ResponsiveMobileUtils
                                                                   .getResponsiveSize(

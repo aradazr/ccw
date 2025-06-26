@@ -30,24 +30,14 @@ class MrecourcesScreen extends StatelessWidget {
                 alignment: Alignment.topCenter,
                 children: [
                   Image.asset(
-                    'assets/images/mobileResources.png',
+                    'assets/images/recources.png',
                     fit: BoxFit.cover,
                     width:
                         ResponsiveMobileUtils.getResponsiveSize(context, 402),
                     height:
                         ResponsiveMobileUtils.getResponsiveSize(context, 377),
                   ),
-                  Positioned(
-                    top: -ResponsiveMobileUtils.getResponsiveSize(context, 400),
-                    child: Image.asset(
-                      'assets/images/greenBlur2.png',
-                      height: ResponsiveMobileUtils.getResponsiveSize(
-                          context, 1000),
-                      width: ResponsiveMobileUtils.getResponsiveSize(
-                          context, 1200),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                  
                   MobileAppBar(),
                   Positioned(
                     top: ResponsiveMobileUtils.getResponsiveSize(context, 168),

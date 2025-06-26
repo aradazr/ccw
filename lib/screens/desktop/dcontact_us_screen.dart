@@ -219,7 +219,7 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
               child: Stack(
                 alignment: Alignment.topCenter,
                 children: [
-                  Image.asset('assets/images/recources.png',
+                  Image.asset('assets/images/contactUs.png',
                       fit: BoxFit.cover,
                       width: ResponsiveDesktopUtils.getResponsiveSize(
                           context, 1440),
@@ -400,7 +400,7 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
                                                               .getResponsiveSize(
                                                                   context, 25),
                                                     ),
-                                                    Text('+1012 3456 789',
+                                                    Text('(604) 731-1191',
                                                         style: TextStyle(
                                                           fontSize:
                                                               ResponsiveDesktopUtils
@@ -432,7 +432,7 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
                                                               .getResponsiveSize(
                                                                   context, 25),
                                                     ),
-                                                    Text('demo@gmail.com',
+                                                    Text('info@ccwcpa.ca',
                                                         style: TextStyle(
                                                           fontSize:
                                                               ResponsiveDesktopUtils
@@ -448,7 +448,7 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
                                                 Row(
                                                   children: [
                                                     Image.asset(
-                                                      'assets/images/call.png',
+                                                      'assets/images/location.png',
                                                       width:
                                                           ResponsiveDesktopUtils
                                                               .getResponsiveSize(
@@ -470,7 +470,7 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
                                                               .getResponsiveSize(
                                                                   context, 288),
                                                       child: Text(
-                                                          '132 Dartmouth Street Boston, Massachusetts 02156 United States',
+                                                          'Unit -M-9, 601 West Broadway, Vancouver, V5Z 4C2',
                                                           style: TextStyle(
                                                             fontSize:
                                                                 ResponsiveDesktopUtils

@@ -1,6 +1,5 @@
 import 'package:ccw/constans/my_color.dart';
 import 'package:ccw/constans/responsive_utiles.dart';
-import 'package:ccw/screens/desktop/test.dart';
 import 'package:ccw/widgets/mobile/bullet_text.dart';
 import 'package:ccw/widgets/mobile/mobile_app_bar.dart';
 import 'package:ccw/widgets/mobile/mobile_footer.dart';
@@ -95,17 +94,7 @@ class MservicesScreen extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                   
-                  Positioned(
-                    top: -ResponsiveMobileUtils.getResponsiveSize(context, 400),
-                    child: Image.asset(
-                      'assets/images/greenBlur2.png',
-                      height: ResponsiveMobileUtils.getResponsiveSize(
-                          context, 1000),
-                      width: ResponsiveMobileUtils.getResponsiveSize(
-                          context, 1200),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                  
                   Positioned(
                     top: ResponsiveMobileUtils.getResponsiveSize(context, 120),
                     child: Column(

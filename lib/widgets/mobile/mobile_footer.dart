@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:ccw/constans/my_color.dart';
 import 'package:ccw/constans/responsive_utiles.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MobileFooter extends StatelessWidget {
   const MobileFooter({
@@ -21,8 +22,7 @@ class MobileFooter extends StatelessWidget {
             children: [
               Padding(
                 padding: EdgeInsets.only(
-                  left: ResponsiveMobileUtils.getResponsiveSize(
-                      context, 16),
+                  left: ResponsiveMobileUtils.getResponsiveSize(context, 16),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,24 +30,23 @@ class MobileFooter extends StatelessWidget {
                     Image.asset(
                       'assets/images/ccwLogo.png',
                       fit: BoxFit.cover,
-                      height: ResponsiveMobileUtils.getResponsiveSize(
-                          context, 17),
-                      width: ResponsiveMobileUtils.getResponsiveSize(
-                          context, 44),
+                      height:
+                          ResponsiveMobileUtils.getResponsiveSize(context, 17),
+                      width:
+                          ResponsiveMobileUtils.getResponsiveSize(context, 44),
                     ),
                     SizedBox(
-                      height: ResponsiveMobileUtils.getResponsiveSize(
-                          context, 7),
+                      height:
+                          ResponsiveMobileUtils.getResponsiveSize(context, 7),
                     ),
                     SizedBox(
-                      width: ResponsiveMobileUtils.getResponsiveSize(
-                          context, 200),
+                      width:
+                          ResponsiveMobileUtils.getResponsiveSize(context, 200),
                       child: Text(
                         'Build by aradazr.dev, All Rights Reserved',
                         style: TextStyle(
-                          fontSize:
-                              ResponsiveMobileUtils.getResponsiveSize(
-                                  context, 12),
+                          fontSize: ResponsiveMobileUtils.getResponsiveSize(
+                              context, 12),
                           color: MyColor.white,
                           fontWeight: FontWeight.w200,
                         ),
@@ -68,68 +67,10 @@ class MobileFooter extends StatelessWidget {
                   7,
                 ),
               ),
+              
               Padding(
                 padding: EdgeInsets.only(
-                    left: ResponsiveMobileUtils.getResponsiveSize(
-                        context, 16)),
-                child: Column(
-                  spacing: ResponsiveMobileUtils.getResponsiveSize(
-                      context, 12),
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'More',
-                      style: TextStyle(
-                        fontSize:
-                            ResponsiveMobileUtils.getResponsiveSize(
-                                context, 15),
-                        color: MyColor.white,
-                        fontWeight: FontWeight.w900,
-                      ),
-                    ),
-                    Text(
-                      'Documentation',
-                      style: TextStyle(
-                        fontSize:
-                            ResponsiveMobileUtils.getResponsiveSize(
-                                context, 12),
-                        color: MyColor.white,
-                        fontWeight: FontWeight.w200,
-                      ),
-                    ),
-                    Text(
-                      'License',
-                      style: TextStyle(
-                        fontSize:
-                            ResponsiveMobileUtils.getResponsiveSize(
-                                context, 12),
-                        color: MyColor.white,
-                        fontWeight: FontWeight.w200,
-                      ),
-                    ),
-                    Text(
-                      'Changelog',
-                      style: TextStyle(
-                        fontSize:
-                            ResponsiveMobileUtils.getResponsiveSize(
-                                context, 12),
-                        color: MyColor.white,
-                        fontWeight: FontWeight.w200,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: ResponsiveMobileUtils.getResponsiveSize(
-                  context,
-                  33,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                  left: ResponsiveMobileUtils.getResponsiveSize(
-                      context, 16),
+                  left: ResponsiveMobileUtils.getResponsiveSize(context, 16),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -137,67 +78,70 @@ class MobileFooter extends StatelessWidget {
                     Text(
                       'Social',
                       style: TextStyle(
-                        fontSize:
-                            ResponsiveMobileUtils.getResponsiveSize(
-                                context, 15),
+                        fontSize: ResponsiveMobileUtils.getResponsiveSize(
+                            context, 15),
                         color: MyColor.white,
                         fontWeight: FontWeight.w900,
                       ),
                     ),
                     SizedBox(
-                      height: ResponsiveMobileUtils.getResponsiveSize(
-                          context, 7),
+                      height:
+                          ResponsiveMobileUtils.getResponsiveSize(context, 7),
                     ),
                     Row(
-                      spacing: ResponsiveMobileUtils.getResponsiveSize(
-                          context, 7),
+                      spacing:
+                          ResponsiveMobileUtils.getResponsiveSize(context, 7),
                       children: [
-                        Container(
-                          height:
+                        GestureDetector(
+                          onTap: () async {
+                            final Uri url =
+                                Uri.parse('https://www.instagram.com/ccwcpa/');
+                            if (!await launchUrl(url)) {
+                              throw Exception('Could not launch');
+                            }
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(
                               ResponsiveMobileUtils.getResponsiveSize(
-                                  context, 32),
-                          width:
-                              ResponsiveMobileUtils.getResponsiveSize(
-                                  context, 32),
-                          decoration: BoxDecoration(
-                            color: MyColor.secendry,
-                            shape: BoxShape.circle,
+                                  context, 12),
+                            ),
+                            decoration: BoxDecoration(
+                              color: MyColor.cartColor,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Image.asset('assets/images/instagram.png',
+                                fit: BoxFit.cover,
+                                height: ResponsiveMobileUtils.getResponsiveSize(
+                                    context, 22),
+                                width: ResponsiveMobileUtils.getResponsiveSize(
+                                    context, 22)),
                           ),
                         ),
-                        Container(
-                          height:
+                        GestureDetector(
+                          onTap: () async {
+                            final Uri url = Uri.parse(
+                                'https://www.linkedin.com/company/ccw-cpa/');
+                            if (!await launchUrl(url)) {
+                              throw Exception('Could not launch');
+                            }
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(
                               ResponsiveMobileUtils.getResponsiveSize(
-                                  context, 32),
-                          width:
-                              ResponsiveMobileUtils.getResponsiveSize(
-                                  context, 32),
-                          decoration: BoxDecoration(
-                            color: MyColor.secendry,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                        Container(
-                          height:
-                              ResponsiveMobileUtils.getResponsiveSize(
-                                  context, 32),
-                          width:
-                              ResponsiveMobileUtils.getResponsiveSize(
-                                  context, 32),
-                          decoration: BoxDecoration(
-                            color: MyColor.secendry,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                        Container(
-                          height:
-                              ResponsiveMobileUtils.getResponsiveSize(
-                                  context, 32),
-                          width:
-                              ResponsiveMobileUtils.getResponsiveSize(
-                                  context, 32),
-                          decoration: BoxDecoration(
-                            color: MyColor.secendry,
-                            shape: BoxShape.circle,
+                                  context, 12),
+                            ),
+                            decoration: BoxDecoration(
+                              color: MyColor.cartColor,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Image.asset(
+                              'assets/images/linkedin.png',
+                              fit: BoxFit.cover,
+                              height: ResponsiveMobileUtils.getResponsiveSize(
+                                  context, 22),
+                              width: ResponsiveMobileUtils.getResponsiveSize(
+                                  context, 22),
+                            ),
                           ),
                         ),
                       ],
@@ -208,25 +152,29 @@ class MobileFooter extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height:
-                ResponsiveMobileUtils.getResponsiveSize(context, 45),
+            height: ResponsiveMobileUtils.getResponsiveSize(context, 45),
           ),
-          Image.asset(
-            'assets/images/mobileMap.png',
-            fit: BoxFit.cover,
-            height:
-                ResponsiveMobileUtils.getResponsiveSize(context, 454),
-            width:
-                ResponsiveMobileUtils.getResponsiveSize(context, 402),
+          GestureDetector(
+            onTap: () async {
+              final Uri url = Uri.parse(
+                  'https://www.google.com/maps/place/CCW+CPA/@49.2636573,-123.1181345,17z/data=!3m2!4b1!5s0x548673c4e9f2c619:0xa5b3b9ac91c84655!4m6!3m5!1s0x548673ec3a23f9c1:0xf186078e01a09075!8m2!3d49.2636573!4d-123.1181345!16s%2Fg%2F11lzkr22gx?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D');
+              if (!await launchUrl(url)) {
+                throw Exception('Could not launch');
+              }
+            },
+            child: Image.asset(
+              'assets/images/mobileMap.png',
+              fit: BoxFit.cover,
+              height: ResponsiveMobileUtils.getResponsiveSize(context, 454),
+              width: ResponsiveMobileUtils.getResponsiveSize(context, 402),
+            ),
           ),
           SizedBox(
-            height:
-                ResponsiveMobileUtils.getResponsiveSize(context, 16),
+            height: ResponsiveMobileUtils.getResponsiveSize(context, 16),
           ),
           Container(
             alignment: Alignment.center,
-            height:
-                ResponsiveMobileUtils.getResponsiveSize(context, 42),
+            height: ResponsiveMobileUtils.getResponsiveSize(context, 42),
             width: ResponsiveMobileUtils.getResponsiveSize(context, 42),
             decoration: BoxDecoration(
               gradient: LinearGradient(colors: [
@@ -237,29 +185,24 @@ class MobileFooter extends StatelessWidget {
             ),
             child: Image.asset(
               'assets/images/cLogo.png',
-              height:
-                  ResponsiveMobileUtils.getResponsiveSize(context, 19),
-              width: ResponsiveMobileUtils.getResponsiveSize(
-                  context, 14.74),
+              height: ResponsiveMobileUtils.getResponsiveSize(context, 19),
+              width: ResponsiveMobileUtils.getResponsiveSize(context, 14.74),
               fit: BoxFit.cover,
             ),
           ),
           SizedBox(
-            height:
-                ResponsiveMobileUtils.getResponsiveSize(context, 12),
+            height: ResponsiveMobileUtils.getResponsiveSize(context, 12),
           ),
           Text(
             'Copyright © 2019. Crafted with love.',
             style: TextStyle(
               color: MyColor.white,
-              fontSize:
-                  ResponsiveMobileUtils.getResponsiveSize(context, 12),
+              fontSize: ResponsiveMobileUtils.getResponsiveSize(context, 12),
             ),
           ),
-
           SizedBox(
-              height: ResponsiveMobileUtils.getResponsiveSize(context, 50),
-            ),
+            height: ResponsiveMobileUtils.getResponsiveSize(context, 50),
+          ),
         ],
       ),
     );

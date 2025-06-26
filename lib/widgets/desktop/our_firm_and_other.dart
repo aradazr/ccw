@@ -75,7 +75,7 @@ class OurFirmAndOther extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(size.width / 65.45),
             child: Image.asset(
-              'assets/images/ourFirm.png',
+              image,
               height: size.width / 3.157,
               width: size.width / 2.102,
               fit: BoxFit.cover,

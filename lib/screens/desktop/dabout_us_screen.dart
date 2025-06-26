@@ -30,7 +30,7 @@ class _DaboutUsScreenState extends State<DaboutUsScreen> {
         title: 'Our Firm',
         description:
                           "CCW CPA is a professional accounting firm with a reputation for excellence. Under the leadership of Parham Alizadehkia, CPA, our firm continues to build on a strong foundation, ensuring seamless transitions and continuity of service. Brian Cawley, CPA, CA who built this practice over decades, remains an invaluable part of our team as an advisor, helping to guide the next generation of financial professionals. We take a proactive approach to accounting, taxation, and financial advisory services. Our goal goes further than to ensure compliance but to help our clients maximize profitability, minimize risk, and plan for long-term success. Through our deep understanding of tax regulations and financial strategies, we position businesses and individuals for growth, stability, and success in an ever-evolving economic landscape.",
-        image: 'assets/images/recources.png',
+        image: 'assets/images/ourFirm.jpg',
         colors: [Color(0xFF0E0E0E), const Color(0xFF0E2E2E)],
       ),
       SizedBox(
@@ -41,7 +41,7 @@ class _DaboutUsScreenState extends State<DaboutUsScreen> {
         title: 'Our Mission',
         description:
                           "Our mission is to empower businesses and individuals with trusted financial guidance, expert accounting services, and personalized tax strategies. We are committed to delivering solutions that help our clients achieve their financial goals while maintaining the highest levels of accuracy and professionalism.",
-        image: 'assets/images/recources.png',
+        image: 'assets/images/ourMission.jpg',
         colors: [Color(0xFF0E0E0E), const Color(0xFF221B0D)],
       ),
       SizedBox(
@@ -52,7 +52,7 @@ class _DaboutUsScreenState extends State<DaboutUsScreen> {
         title: 'Our Vision',
         description:
                           "We strive to be the premier CPA firm, recognized for driving financial success and growth for our clients. By continually innovating and evolving our services, we ensure that businesses and individuals receive forward-thinking, ethical, and expert financial advice tailored to their needs.",
-        image: 'assets/images/recources.png',
+        image: 'assets/images/ourVission.jpg',
         colors: [Color(0xFF0E0E0E), const Color(0xFF1F272B)],
       ),
     ];

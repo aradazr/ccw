@@ -93,7 +93,7 @@ class _DservicesScreenState extends State<DservicesScreen> {
                 alignment: Alignment.topCenter,
                 children: [
                   Image.asset(
-                    'assets/images/dservices.png',
+                    'assets/images/services.png',
                     width:
                         ResponsiveDesktopUtils.getResponsiveSize(context, 1440),
                     height:
