@@ -163,9 +163,9 @@ class MobileFooter extends StatelessWidget {
               }
             },
             child: Image.asset(
-              'assets/images/mobileMap.png',
-              fit: BoxFit.cover,
-              height: ResponsiveMobileUtils.getResponsiveSize(context, 454),
+              'assets/images/map.png',
+              fit: BoxFit.fitHeight,
+              height: ResponsiveMobileUtils.getResponsiveSize(context, 300),
               width: ResponsiveMobileUtils.getResponsiveSize(context, 402),
             ),
           ),

@@ -19,7 +19,7 @@ class PdfItem {
     return PdfItem(
       id: json['id'],
       name: json['name'],
-      file: 'https://pocketbase-5i4fn3.chbk.app/api/files/${json['collectionId']}/${json['id']}/${json['file']}',
+      file: 'https://pocketbase-ccw.chbk.app/api/files/${json['collectionId']}/${json['id']}/${json['file']}',
       collectionId: json['collectionId'],
       title: json['title'],
       link: json['link'],

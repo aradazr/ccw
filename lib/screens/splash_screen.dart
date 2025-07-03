@@ -4,7 +4,6 @@ import 'package:ccw/constans/responsive_utiles.dart';
 import 'package:ccw/screens/desktop/dhome_screen.dart';
 import 'package:ccw/screens/mobile/mhome_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -18,59 +17,22 @@ class _SplashScreenState extends State<SplashScreen> {
   double _progress = 0.0;
   final List<String> imageAssets = [
     'assets/images/aboutusPeople.png',
-    'assets/images/accounting.png',
-    'assets/images/advisory.png',
-    'assets/images/arrow.png',
-    'assets/images/arrowDown.png',
-    'assets/images/call.png',
     'assets/images/ccwLogo.png',
-    'assets/images/circularArrow.png',
-    'assets/images/clientFocused.png',
     'assets/images/cLogo.png',
     'assets/images/closeDrawer.png',
-    'assets/images/commitment.png',
-    'assets/images/compliance.png',
-    'assets/images/corporate.png',
     'assets/images/curvShape.png',
-    'assets/images/decadesIcon.png',
-    'assets/images/dservices.png',
-    'assets/images/email.png',
-    'assets/images/excellence.png',
-    'assets/images/expertAccounting.png',
-    'assets/images/eyeIcon.png',
-    'assets/images/flyingLetter.png',
-    'assets/images/goldArrow.png',
-    'assets/images/greenBlur.png',
-    'assets/images/greenBlur2.png',
-    'assets/images/greyBlur.png',
-    'assets/images/individualIcon.png',
-    'assets/images/leadership.png',
-    'assets/images/location.png',
     'assets/images/map.png',
     'assets/images/menu.png',
     'assets/images/mobileAboutUsPeople.png',
-    'assets/images/mobileMap.png',
-    'assets/images/mobileResources.png',
-    'assets/images/operationIcon.png',
-    'assets/images/ownerIcon.png',
     'assets/images/parham.png',
     'assets/images/colette.png',
     'assets/images/brian.png',
     'assets/images/kantaro.png',
     'assets/images/peapole.png',
-    'assets/images/personal.png',
     'assets/images/personalized.png',
-    'assets/images/realState.png',
     'assets/images/recources.png',
-    'assets/images/refresh.png',
-    'assets/images/reliableService.png',
-    'assets/images/seamless.png',
-    'assets/images/selfEmploydIcon.png',
     'assets/images/services.png',
-    'assets/images/smallIcon.png',
-    'assets/images/smoothConnectivity.png',
     'assets/images/space.png',
-    'assets/images/trust.png',
   ];
 
   @override

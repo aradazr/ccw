@@ -10,12 +10,9 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../widgets/desktop/resources_container.dart';
-
 class MrecourcesScreen extends StatelessWidget {
-   MrecourcesScreen({super.key});
-    final PdfRepository pdfRepository = PdfRepository();
-
+  MrecourcesScreen({super.key});
+  final PdfRepository pdfRepository = PdfRepository();
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +34,6 @@ class MrecourcesScreen extends StatelessWidget {
                     height:
                         ResponsiveMobileUtils.getResponsiveSize(context, 377),
                   ),
-                  
                   MobileAppBar(),
                   Positioned(
                     top: ResponsiveMobileUtils.getResponsiveSize(context, 168),
@@ -135,9 +131,8 @@ class MrecourcesScreen extends StatelessWidget {
                               highlightColor:
                                   Colors.grey[600]!, // روشن‌تر ولی نه سفید
                               child: Container(
-                                height:
-                                    ResponsiveMobileUtils.getResponsiveSize(
-                                        context, 64),
+                                height: ResponsiveMobileUtils.getResponsiveSize(
+                                    context, 64),
                                 width: ResponsiveMobileUtils.getResponsiveSize(
                                     context, 371),
                                 decoration: BoxDecoration(
@@ -227,8 +222,8 @@ class MrecourcesScreen extends StatelessWidget {
                                       }),
                                     ),
                                   );
-                                } 
-                                
+                                }
+
                                 //? if we have error
                                 else if (fileSnapshot.hasError) {
                                   WidgetsBinding.instance
@@ -242,7 +237,7 @@ class MrecourcesScreen extends StatelessWidget {
                                     );
                                   });
                                   return SizedBox(); // یا هر ویجت خالی دیگر
-                                } 
+                                }
                                 //? if we dont have data
                                 else if (!fileSnapshot.hasData ||
                                     fileSnapshot.data!.isEmpty) {
@@ -250,8 +245,10 @@ class MrecourcesScreen extends StatelessWidget {
                                     padding: const EdgeInsets.all(12.0),
                                     child: Wrap(
                                       alignment: WrapAlignment.center,
-                                      spacing: ResponsiveMobileUtils.getResponsiveSize(context, 12),
-                                      runSpacing: ResponsiveMobileUtils.getResponsiveSize(context, 12),
+                                      spacing: ResponsiveMobileUtils
+                                          .getResponsiveSize(context, 12),
+                                      runSpacing: ResponsiveMobileUtils
+                                          .getResponsiveSize(context, 12),
                                       children: List.generate(9, (index) {
                                         return Shimmer.fromColors(
                                           baseColor: Colors.grey[
@@ -268,19 +265,24 @@ class MrecourcesScreen extends StatelessWidget {
                                               color: Colors.grey[
                                                   850], // رنگ بک‌گراند داخل شِیمر
                                               borderRadius:
-                                                  BorderRadius.circular(ResponsiveMobileUtils.getResponsiveSize(context, 8)),
+                                                  BorderRadius.circular(
+                                                      ResponsiveMobileUtils
+                                                          .getResponsiveSize(
+                                                              context, 8)),
                                             ),
                                           ),
                                         );
                                       }),
                                     ),
                                   );
-                                } 
+                                }
                                 //? if the data is not empty
                                 else {
                                   List<PdfItem> files = fileSnapshot.data!;
                                   return Column(
-                                    spacing: ResponsiveMobileUtils.getResponsiveSize(context, 12),
+                                    spacing:
+                                        ResponsiveMobileUtils.getResponsiveSize(
+                                            context, 12),
                                     children:
                                         files.asMap().entries.map((entry) {
                                       final index = entry.key;
@@ -288,9 +290,10 @@ class MrecourcesScreen extends StatelessWidget {
 
                                       return GestureDetector(
                                         onTap: () async {
-                                          final Uri url = Uri.parse(file.file);
+                                          final Uri url = Uri.parse(
+                                              file.link);
                                           if (!await launchUrl(url)) {
-                                            WidgetsBinding.instance
+                                               WidgetsBinding.instance
                                                 .addPostFrameCallback((_) {
                                               ScaffoldMessenger.of(context)
                                                   .showSnackBar(
@@ -305,16 +308,17 @@ class MrecourcesScreen extends StatelessWidget {
                                             });
                                           }
                                         },
-                                        child: MobileResourcesContainer(file: file)
-                                            .animate()
-                                            .fade(
-                                                duration: 400.ms,
-                                                delay: (index * 300).ms)
-                                            .slideX(
-                                                begin: 0.3,
-                                                end: 0,
-                                                duration: 500.ms,
-                                                curve: Curves.easeOut),
+                                        child:
+                                            MobileResourcesContainer(file: file)
+                                                .animate()
+                                                .fade(
+                                                    duration: 400.ms,
+                                                    delay: (index * 300).ms)
+                                                .slideX(
+                                                    begin: 0.3,
+                                                    end: 0,
+                                                    duration: 500.ms,
+                                                    curve: Curves.easeOut),
                                       );
                                     }).toList(),
                                   );

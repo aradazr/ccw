@@ -94,15 +94,15 @@ class DmeetOurExperts extends StatelessWidget {
                         ),
                         MeetOurTeam(
                           size: size,
-                          image: 'assets/images/kantaro.png',
+                          image: 'assets/images/colette.png',
                           name: 'Kantaro Horino',
                           title: 'CPA Student',
                           subTitle:
-                              'Kantaro Horino is a dedicated CPA student with a strong passion for accounting and tax services. Born and raised in Vancouver, BC, he is fluent in both English and Japanese. He holds a Business degree from the University of Victoria and has gained valuable experience through multiple internships before returning to CCW CPA as a tax accountant to pursue his CPA designation. With a keen eye for detail and a deep understanding of financial management and tax preparation, Kantaro is committed to delivering high-quality services by ensuring accurate financial reporting and full regulatory compliance. Under the mentorship of seasoned professionals, he continues to develop his expertise in taxation and financial advisory, making him a valuable asset to both the firm and our clients.',
+                              'Kantaro Horino is a CPA candidate with a passion for accounting and tax services. Born and raised in Vancouver, he is fluent in English and Japanese and holds a Business degree from the University of Victoria. After multiple internships, he returned to CCW CPA as a tax accountant. Under the mentorship of seasoned professionals, he continues to grow his expertise in taxation and financial advisory.',
                         ),
                         MeetOurTeam(
                           size: size,
-                          image: 'assets/images/colette.png',
+                          image: 'assets/images/kantaro.png',
                           name: 'Colette Lam',
                           title: 'Administrative Specialist',
                           subTitle:

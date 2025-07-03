@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:ccw/constans/my_color.dart';
 import 'package:ccw/screens/desktop/dabout_us_screen.dart';
 import 'package:ccw/screens/desktop/dcontact_us_screen.dart';
@@ -81,7 +79,7 @@ class _DhomeScreenState extends State<DhomeScreen> {
                     child: Column(
                       children: [
                         Text(
-                          'Financial Clarity , Trusted Guidance',
+                          'Financial Clarity, Trusted Guidance',
                           style: TextStyle(
                               fontSize: size.width / 30,
                               color: MyColor.white,
@@ -92,7 +90,7 @@ class _DhomeScreenState extends State<DhomeScreen> {
                             width: size.width / 2.29,
                             child: Text(
                               textAlign: TextAlign.center,
-                              'Helping business owners streamline accounting, optimize tax strategies, and stay compliant- so you can focus on what you do best',
+                              'We help business owners streamline accounting, optimize tax strategies, and stay compliant - so you can focus on what you do best',
                               style: TextStyle(
                                   fontSize: size.width / 72,
                                   color: MyColor.white,
@@ -103,7 +101,11 @@ class _DhomeScreenState extends State<DhomeScreen> {
                           spacing: size.width / 57.6,
                           children: [
                             GestureDetector(
-                              onTap: () => Navigator.push(context,  MaterialPageRoute(builder: (context) => DcontactUsScreen(),)),
+                              onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => DcontactUsScreen(),
+                                  )),
                               child: Container(
                                   alignment: Alignment.center,
                                   height: size.width / 25.71,
@@ -121,7 +123,11 @@ class _DhomeScreenState extends State<DhomeScreen> {
                                   )),
                             ),
                             GestureDetector(
-                               onTap: () => Navigator.push(context,  MaterialPageRoute(builder: (context) => DaboutUsScreen(),)),
+                              onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => DaboutUsScreen(),
+                                  )),
                               child: Container(
                                   alignment: Alignment.center,
                                   height: size.width / 25.71,
@@ -141,7 +147,11 @@ class _DhomeScreenState extends State<DhomeScreen> {
                                   )),
                             ),
                             GestureDetector(
-                               onTap: () => Navigator.push(context,  MaterialPageRoute(builder: (context) => DservicesScreen(),)),
+                              onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => DservicesScreen(),
+                                  )),
                               child: Container(
                                   alignment: Alignment.center,
                                   height: size.width / 25.71,
@@ -249,7 +259,7 @@ class _DhomeScreenState extends State<DhomeScreen> {
             ),
             Text(
               textAlign: TextAlign.center,
-              'At CCW CPA, we specialize in providing expert accounting and tax services for:',
+              'At CCW CPA, we specialize in expert accounting and tax services tailored for:',
               style: TextStyle(
                   fontSize: size.width / 80,
                   color: MyColor.white,
@@ -298,7 +308,7 @@ class _DhomeScreenState extends State<DhomeScreen> {
                       "image": "assets/images/selfEmploydIcon.png",
                       "title": "Self-Employed Professionals",
                       "description":
-                          "Whether you’re a consultant, contractor, or freelancer, we streamline your finances, optimize deductions, and ensure hassle-free tax filing—so you can focus on growing your business."
+                          "Whether you’re a consultant, contractor, or freelancer, we streamline your financials, optimize deductions, and ensure hassle-free tax filing—so you can focus on growing your business."
                     }
                   ];
 
@@ -338,7 +348,7 @@ class _DhomeScreenState extends State<DhomeScreen> {
 
             //! wrap number two with 4 container and animation with shimmer have icon, title and description
             Text(
-              'Why Choose CCW',
+              'Why Choose CCW CPA',
               style: TextStyle(
                   fontSize: size.width / 40,
                   color: MyColor.secendry,

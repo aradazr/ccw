@@ -84,7 +84,7 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
   }
 
   String? validateEmail(String email) {
-    if (email.trim().length < 6) {
+    if (email.trim().length < 2) {
       return 'Your email must be at least 6 characters long.';
     }
 
@@ -94,7 +94,7 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
     }
 
     final localPart = email.split('@').first;
-    if (localPart.length < 6) {
+    if (localPart.length < 2) {
       return 'Your email local part must be at least 6 characters long.';
     }
 
@@ -149,7 +149,7 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
 
     try {
       final checkResponse = await dio.get(
-        'https://pocketbase-5i4fn3.chbk.app/api/collections/messages/records',
+        'https://pocketbase-ccw.chbk.app/api/collections/messages/records',
         queryParameters: {
           'filter': 'email = "$email" && date = "$today"',
         },
@@ -169,7 +169,7 @@ class _DcontactUsScreenState extends State<DcontactUsScreen> {
       }
 
       final response = await dio.post(
-        'https://pocketbase-5i4fn3.chbk.app/api/collections/messages/records',
+        'https://pocketbase-ccw.chbk.app/api/collections/messages/records',
         options: Options(headers: {'Content-Type': 'application/json'}),
         data: {
           'email': email,

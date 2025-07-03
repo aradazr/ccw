@@ -1,6 +1,5 @@
 import 'package:ccw/constans/my_color.dart';
 import 'package:ccw/constans/responsive_utiles.dart';
-import 'package:ccw/widgets/mobile/bullet_text.dart';
 import 'package:ccw/widgets/mobile/mobile_app_bar.dart';
 import 'package:ccw/widgets/mobile/mobile_footer.dart';
 import 'package:ccw/widgets/mobile/mobile_services_item.dart';
@@ -40,7 +39,7 @@ class MservicesScreen extends StatelessWidget {
         line1: 'Financial strategic planning',
         line2: 'Business restructuring',
         line3: 'Estate and succession planning',
-        line4: 'Business incorporation & structuring guidance(Not legal work)',
+        line4: 'Business incorporation & structuring guidance (Not legal work)',
         line5: 'Outsourced CFO & financial controller services',
       ),
       ServicesItem(

@@ -1,7 +1,6 @@
 import 'package:ccw/constans/my_color.dart';
 import 'package:ccw/constans/responsive_utiles.dart';
 import 'package:ccw/widgets/desktop/desktop_bullet_text.dart';
-import 'package:ccw/widgets/mobile/bullet_text.dart';
 import 'package:flutter/material.dart';
 
 class DesktopServicesItem extends StatelessWidget {

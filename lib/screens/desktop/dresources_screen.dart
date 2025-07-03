@@ -6,10 +6,8 @@ import 'package:ccw/repository/pdf_repository.dart';
 import 'package:ccw/widgets/desktop/app_bar.dart';
 import 'package:ccw/widgets/desktop/footer.dart';
 import 'package:ccw/widgets/desktop/resources_container.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -304,10 +302,11 @@ class DresourcesScreen extends StatelessWidget {
                                       final file = entry.value;
 
                                       return GestureDetector(
-                                        onTap: () async {
-                                          final Uri url = Uri.parse(file.file);
+                                         onTap: () async {
+                                          final Uri url = Uri.parse(
+                                              file.link);
                                           if (!await launchUrl(url)) {
-                                            WidgetsBinding.instance
+                                               WidgetsBinding.instance
                                                 .addPostFrameCallback((_) {
                                               ScaffoldMessenger.of(context)
                                                   .showSnackBar(

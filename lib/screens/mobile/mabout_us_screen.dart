@@ -29,7 +29,6 @@ class _MaboutUsScreenState extends State<MaboutUsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: MyColor.backGround,
       body: SingleChildScrollView(
@@ -265,7 +264,7 @@ class _MaboutUsScreenState extends State<MaboutUsScreen> {
                                     12,
                                   ),
                                   color: MyColor.grey),
-                              'At CCW CPA, we are more than just accountants—we are strategic partners dedicated to your financial success. With decades of experience in tax, accounting, and business advisory services, we help individuals and businesses navigate the complexities of financial management with clarity and confidence.As a firm built on trust, expertise, and innovation, we prioritize personalized service, ensuring that every client receives solutions tailored to their specific needs. Whether you’re a business owner seeking tax optimization, an investor looking for strategic planning, or an individual in need of financial guidance, we are here to help you make informed decisions with confidence.',
+                              'Our firm is built on trust, expertise, and innovation. We prioritize personalized service, delivering tailored solutions that align with your specific needs and long-term goals. Whether you’re a business owner focused on tax optimization, an investor seeking strategic insight, or an individual looking for expert guidance, we’re here to help you make informed, confident decisions.',
                             ),
                           ]),
                     ),
@@ -399,7 +398,7 @@ class _MaboutUsScreenState extends State<MaboutUsScreen> {
                 (index) {
                   List<Map<String, String>> data = [
                     {
-                      "title": "Our Vision",
+                      "title": "Integrity",
                       "description":
                           "We uphold the highest ethical standards, ensuring transparency and honesty in everything we do.",
                       "image": "assets/images/eyeIcon.png",
@@ -417,9 +416,9 @@ class _MaboutUsScreenState extends State<MaboutUsScreen> {
                       "image": "assets/images/excellence.png",
                     },
                     {
-                      "title": "Leader Sheep",
+                      "title": "LeaderShip",
                       "description":
-                          "We strive to be the premier CPA firm, recognized for driving financial success and growth for our clients. By continually innovating and evolving our services, we ensure that businesses and individuals receive forward-thinking, ethical, and expert financial advice tailored totheir needs.",
+                          "We strive to be the premier CPA firm, recognized for driving financial success and growth for our clients.",
                       "image": "assets/images/leadership.png",
                     },
                   ];

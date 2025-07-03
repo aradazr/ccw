@@ -6,7 +6,6 @@ import 'package:ccw/screens/desktop/dservices_screen.dart';
 import 'package:ccw/screens/desktop/dcontact_us_screen.dart';
 import 'package:ccw/widgets/desktop/hover_appbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MyAppbar extends StatelessWidget {

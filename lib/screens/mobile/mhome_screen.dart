@@ -53,7 +53,7 @@ class _MhomeScreenState extends State<MhomeScreen> {
                           ResponsiveMobileUtils.getResponsiveSize(context, 300),
                       child: Text(
                         textAlign: TextAlign.center,
-                        'Financial Clarity , Trusted Guidance',
+                        'Financial Clarity, Trusted Guidance',
                         style: TextStyle(
                             fontSize: ResponsiveMobileUtils.getResponsiveSize(
                                 context, 20),
@@ -70,7 +70,7 @@ class _MhomeScreenState extends State<MhomeScreen> {
                             context, 350),
                         child: Text(
                           textAlign: TextAlign.center,
-                          'Helping business owners streamline accounting, optimize tax strategies, and stay compliant- so you can focus on what you do best',
+                          'We help business owners streamline accounting, optimize tax strategies, and stay compliant - so you can focus on what you do best',
                           style: TextStyle(
                               fontSize: ResponsiveMobileUtils.getResponsiveSize(
                                   context, 14),
@@ -240,7 +240,7 @@ class _MhomeScreenState extends State<MhomeScreen> {
                   width: ResponsiveMobileUtils.getResponsiveSize(context, 297),
                   child: Text(
                     textAlign: TextAlign.center,
-                    'At CCW CPA, we specialize in providing expert accounting and tax services for:',
+                    'At CCW CPA, we specialize in expert accounting and tax services tailored for:',
                     style: TextStyle(
                         fontSize: ResponsiveMobileUtils.getResponsiveSize(
                             context, 12),
@@ -286,7 +286,7 @@ class _MhomeScreenState extends State<MhomeScreen> {
                     {
                       "title": "Self-Employed Professionals",
                       "description":
-                          "Whether you’re a consultant, contractor, or freelancer, we streamline your finances, optimize deductions, and ensure hassle-free tax filing—so you can focus on growing your business.",
+                          "Whether you’re a consultant, contractor, or freelancer, we streamline your financials, optimize deductions, and ensure hassle-free tax filing—so you can focus on growing your business.",
                       "image": "assets/images/selfEmploydIcon.png"
                     }
                   ];
@@ -327,7 +327,7 @@ class _MhomeScreenState extends State<MhomeScreen> {
               children: [
                 Text(
                   textAlign: TextAlign.center,
-                  'Why Choose CCW',
+                  'Why Choose CCW CPA',
                   style: TextStyle(
                       fontSize:
                           ResponsiveMobileUtils.getResponsiveSize(context, 18),

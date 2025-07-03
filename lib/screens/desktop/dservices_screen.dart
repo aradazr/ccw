@@ -47,7 +47,7 @@ class _DservicesScreenState extends State<DservicesScreen> {
         line1: 'Financial strategic planning',
         line2: 'Business restructuring',
         line3: 'Estate and succession planning',
-        line4: 'Business incorporation & structuring guidance(Not legal work)',
+        line4: 'Business incorporation & structuring guidance (Not legal work)',
         line5: 'Outsourced CFO & financial controller services',
       ),
       DesktopServicesItem(

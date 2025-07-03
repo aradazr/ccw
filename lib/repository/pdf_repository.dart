@@ -4,7 +4,7 @@ import '../models/title_model.dart';
 
 class PdfRepository {
   final Dio _dio = Dio();
-  final String _baseUrl = 'https://pocketbase-5i4fn3.chbk.app';
+  final String _baseUrl = 'https://pocketbase-ccw.chbk.app';
 
   // دریافت لیست عنوان‌ها (pdf_titles)
   Future<List<PdfTitle>> fetchTitles() async {

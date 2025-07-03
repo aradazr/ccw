@@ -53,14 +53,14 @@ class _MmeetOurExpertScreenState extends State<MmeetOurExpertScreen> {
       {
         "title": "CPA Student",
         "name": "Kantaro Horino",
-        "image": "assets/images/kantaro.png",
+        "image": "assets/images/colette.png",
         "description":
-            "Kantaro Horino is a dedicated CPA student with a strong passion for accounting and tax services. Born and raised in Vancouver, BC, he is fluent in both English and Japanese. He holds a Business degree from the University of Victoria and has gained valuable experience through multiple internships before returning to CCW CPA as a tax accountant to pursue his CPA designation. With a keen eye for detail and a deep understanding of financial management and tax preparation, Kantaro is committed to delivering high-quality services by ensuring accurate financial reporting and full regulatory compliance. Under the mentorship of seasoned professionals, he continues to develop his expertise in taxation and financial advisory, making him a valuable asset to both the firm and our clients."
+            "Kantaro Horino is a CPA candidate with a passion for accounting and tax services. Born and raised in Vancouver, he is fluent in English and Japanese and holds a Business degree from the University of Victoria. After multiple internships, he returned to CCW CPA as a tax accountant. Under the mentorship of seasoned professionals, he continues to grow his expertise in taxation and financial advisory."
       },
       {
         "title": "Administrative Specialist",
         "name": "Colette Lam",
-        "image": "assets/images/colette.png",
+        "image": "assets/images/kantaro.png",
         "description":
             "Since joining CCW CPA in 2013, Colette Lam has been a key pillar of stability and efficiency within the firm. With years of experience in public practice, she plays a crucial role in ensuring the seamless operation of our firm, particularly during the busiest seasons. Highly organized and detail-oriented, Colette excels in problem-solving, eƯective communication, and client service, consistently going beyond the scope of her administrative role to support both the team and our clients. Her deep knowledge of administrative processes and unwavering commitment to excellence contribute significantly to the professionalism and success of CCW CPA."
       }
