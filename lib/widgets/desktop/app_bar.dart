@@ -1,12 +1,8 @@
 import 'package:ccw/constans/my_color.dart';
-import 'package:ccw/screens/desktop/dabout_us_screen.dart';
-import 'package:ccw/screens/desktop/dhome_screen.dart';
-import 'package:ccw/screens/desktop/dresources_screen.dart';
-import 'package:ccw/screens/desktop/dservices_screen.dart';
-import 'package:ccw/screens/desktop/dcontact_us_screen.dart';
 import 'package:ccw/widgets/desktop/hover_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:go_router/go_router.dart';
 
 class MyAppbar extends StatelessWidget {
   const MyAppbar({
@@ -45,42 +41,27 @@ class MyAppbar extends StatelessWidget {
           Row(
             children: [
               GestureDetector(
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const DhomeScreen())),
+                  onTap: () => context.go('/home'),
                   child: HoverText(text: 'Home', defaultStyle: homeStyle)),
               SizedBox(width: size.width / 60),
               GestureDetector(
-                onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const DaboutUsScreen())),
+                onTap: () => context.go('/about-us'),
                 child: HoverText(text: 'About Us', defaultStyle: aboutStyle),
               ),
               SizedBox(width: size.width / 60),
               GestureDetector(
-                onTap: () => Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => DservicesScreen())),
+                onTap: () => context.go('/services'),
                 child: HoverText(text: 'Services', defaultStyle: servicesStyle),
               ),
               SizedBox(width: size.width / 60),
               GestureDetector(
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => DresourcesScreen(),
-                  ),
-                ),
+                onTap: () => context.go('/resources'),
                 child:
                     HoverText(text: 'Resources', defaultStyle: resourcesStyle),
               ),
               SizedBox(width: size.width / 60),
               GestureDetector(
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DcontactUsScreen())),
+                  onTap: () => context.go('/contact-us'),
                   child: HoverText(
                       text: 'Contact Us', defaultStyle: contactStyle)),
               SizedBox(width: size.width / 60),

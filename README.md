@@ -1,6 +1,6 @@
 # ccw
 
-A new Flutter project.
+CCW CPA Chartered Professional Accountants
 
 ## Getting Started
 

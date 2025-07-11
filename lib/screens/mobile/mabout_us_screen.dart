@@ -1,7 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:ccw/constans/my_color.dart';
 import 'package:ccw/constans/responsive_utiles.dart';
-import 'package:ccw/screens/mobile/mmeet_our_expert_screen.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ccw/widgets/mobile/mobile_app_bar.dart';
 import 'package:ccw/widgets/mobile/mobile_core_vlaues.dart';
 import 'package:ccw/widgets/mobile/mobile_footer.dart';
@@ -40,17 +40,7 @@ class _MaboutUsScreenState extends State<MaboutUsScreen> {
               child: Stack(
                 alignment: Alignment.topCenter,
                 children: [
-                  Positioned(
-                    top: -ResponsiveMobileUtils.getResponsiveSize(context, 400),
-                    child: Image.asset(
-                      'assets/images/greenBlur2.png',
-                      height: ResponsiveMobileUtils.getResponsiveSize(
-                          context, 1000),
-                      width: ResponsiveMobileUtils.getResponsiveSize(
-                          context, 1200),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                  
                   MobileAppBar(),
                   Positioned(
                     top: ResponsiveMobileUtils.getResponsiveSize(context, 96),
@@ -123,12 +113,7 @@ class _MaboutUsScreenState extends State<MaboutUsScreen> {
                   Positioned(
                     top: ResponsiveMobileUtils.getResponsiveSize(context, 270),
                     child: GestureDetector(
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const MmeetOurExpertScreen(),
-                        ),
-                      ),
+                      onTap: () => context.go('/meet-our-experts'),
                       child: Stack(
                         alignment: Alignment.center,
                         children: [

@@ -1,8 +1,5 @@
 import 'package:ccw/constans/my_color.dart';
 import 'package:ccw/constans/responsive_utiles.dart';
-import 'package:ccw/screens/mobile/mabout_us_screen.dart';
-import 'package:ccw/screens/mobile/mcontact_us_screen.dart';
-import 'package:ccw/screens/mobile/mservices_screen.dart';
 import 'package:ccw/widgets/mobile/mobile_app_bar.dart';
 import 'package:ccw/widgets/mobile/mobile_footer.dart';
 import 'package:ccw/widgets/mobile/mobile_three_container.dart';
@@ -11,6 +8,7 @@ import 'package:ccw/widgets/mobile/mobile_why_choose_ccw.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:visibility_detector/visibility_detector.dart';
+import 'package:go_router/go_router.dart';
 
 class MhomeScreen extends StatefulWidget {
   const MhomeScreen({super.key});
@@ -88,11 +86,7 @@ class _MhomeScreenState extends State<MhomeScreen> {
               spacing: ResponsiveMobileUtils.getResponsiveSize(context, 8),
               children: [
                 GestureDetector(
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MaboutUsScreen(),
-                      )),
+                  onTap: () => context.go('/about-us'),
                   child: Container(
                     alignment: Alignment.center,
                     height:
@@ -116,11 +110,7 @@ class _MhomeScreenState extends State<MhomeScreen> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => McontactUsScreen(),
-                      )),
+                  onTap: () => context.go('/contact-us'),
                   child: Container(
                     alignment: Alignment.center,
                     height:
@@ -141,11 +131,7 @@ class _MhomeScreenState extends State<MhomeScreen> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MservicesScreen(),
-                      )),
+                  onTap: () => context.go('/services'),
                   child: Container(
                     alignment: Alignment.center,
                     height:

@@ -1,5 +1,4 @@
-
-import 'package:ccw/screens/splash_screen.dart';
+import 'package:ccw/router/app_router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,15 +11,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'CCW CPA',
+      title: 'CCW CPA - Chartered Professional Accountants',
       theme: ThemeData(
         fontFamily: 'inter',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: SplashScreen(),
+      routerConfig: AppRouter.router,
     );
   }
 }

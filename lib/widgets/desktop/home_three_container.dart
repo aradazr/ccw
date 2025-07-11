@@ -68,7 +68,7 @@ class _ThreeContainerState extends State<ThreeContainer> {
               width: size.width / 5.5,
               child: Text(
                 overflow: TextOverflow.ellipsis,
-                maxLines: 3,
+                maxLines: 5,
                 textAlign: TextAlign.center,
                 widget.description,
                 style: TextStyle(

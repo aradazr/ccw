@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "ccw" "\0"
+            VALUE "FileDescription", "CCW CPA" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "ccw" "\0"
+            VALUE "InternalName", "CCW CPA" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2025 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "ccw.exe" "\0"
-            VALUE "ProductName", "ccw" "\0"
+            VALUE "OriginalFilename", "CCW CPA.exe" "\0"
+            VALUE "ProductName", "CCW CPA" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

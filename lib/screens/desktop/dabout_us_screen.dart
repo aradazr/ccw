@@ -1,6 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:ccw/constans/my_color.dart';
-import 'package:ccw/screens/desktop/meet_our_experts.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ccw/widgets/desktop/app_bar.dart';
 import 'package:ccw/widgets/desktop/core_values.dart';
 import 'package:ccw/widgets/desktop/footer.dart';
@@ -29,8 +29,7 @@ class _DaboutUsScreenState extends State<DaboutUsScreen> {
         size: size,
         title: 'Our Firm',
         description:
-                          "CCW CPA is a professional accounting firm with a reputation for excellence. Under the leadership of Parham Alizadehkia, CPA, our firm continues to build on a strong foundation, ensuring seamless transitions and continuity of service. Brian Cawley, CPA, CA who built this practice over decades, remains an invaluable part of our team as an advisor, helping to guide the next generation of financial professionals. We take a proactive approach to accounting, taxation, and financial advisory services. Our goal goes further than to ensure compliance but to help our clients maximize profitability, minimize risk, and plan for long-term success. Through our deep understanding of tax regulations and financial strategies, we position businesses and individuals for growth, stability, and success in an ever-evolving economic landscape.",
-        image: 'assets/images/ourFirm.jpg',
+            "CCW CPA is a professional accounting firm with a reputation for excellence. Under the leadership of Parham Alizadehkia, CPA, our firm continues to build on a strong foundation, ensuring seamless transitions and continuity of service. Brian Cawley, CPA, CA who built this practice over decades, remains an invaluable part of our team as an advisor, helping to guide the next generation of financial professionals. We take a proactive approach to accounting, taxation, and financial advisory services. Our goal goes further than to ensure compliance but to help our clients maximize profitability, minimize risk, and plan for long-term success. Through our deep understanding of tax regulations and financial strategies, we position businesses and individuals for growth, stability, and success in an ever-evolving economic landscape.",
         colors: [Color(0xFF0E0E0E), const Color(0xFF0E2E2E)],
       ),
       SizedBox(
@@ -38,22 +37,10 @@ class _DaboutUsScreenState extends State<DaboutUsScreen> {
       ),
       OurFirmAndOther(
         size: size,
-        title: 'Our Mission',
+        title: 'Our Mission & Vision',
         description:
-                          "Our mission is to empower businesses and individuals with trusted financial guidance, expert accounting services, and personalized tax strategies. We are committed to delivering solutions that help our clients achieve their financial goals while maintaining the highest levels of accuracy and professionalism.",
-        image: 'assets/images/ourMission.jpg',
+            "Our mission is to empower businesses and individuals with trusted financial guidance, expert accounting services, and personalized tax strategies.\nWe are committed to delivering solutions that help our clients achieve their financial goals while maintaining the highest levels of accuracy and professionalism. We strive to be the premier CPA firm, recognized for driving financial success and growth for our clients. By continually innovating and evolving our services, we ensure that businesses and individuals receive forward-thinking, ethical, and expert financial advice tailored to their needs.",
         colors: [Color(0xFF0E0E0E), const Color(0xFF221B0D)],
-      ),
-      SizedBox(
-        height: size.height / 49.65,
-      ),
-      OurFirmAndOther(
-        size: size,
-        title: 'Our Vision',
-        description:
-                          "We strive to be the premier CPA firm, recognized for driving financial success and growth for our clients. By continually innovating and evolving our services, we ensure that businesses and individuals receive forward-thinking, ethical, and expert financial advice tailored to their needs.",
-        image: 'assets/images/ourVission.jpg',
-        colors: [Color(0xFF0E0E0E), const Color(0xFF1F272B)],
       ),
     ];
 
@@ -199,11 +186,7 @@ class _DaboutUsScreenState extends State<DaboutUsScreen> {
                           height: size.width / 36.92,
                         ),
                         GestureDetector(
-                          onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const DmeetOurExperts())),
+                          onTap: () => context.go('/meet-our-experts'),
                           child: Stack(
                             alignment: Alignment.center,
                             children: [
@@ -300,7 +283,7 @@ class _DaboutUsScreenState extends State<DaboutUsScreen> {
                     ),
                     SizedBox(
                       width: size.width / 3.95,
-                      child: Text(
+                      child: SelectableText(
                           'Comprehensive and Expert Financial Solutions, Carefully Tailored to Meet Your Unique Needs and Long-Term Goals',
                           style: TextStyle(
                             fontSize: size.width / 50,
@@ -321,8 +304,8 @@ class _DaboutUsScreenState extends State<DaboutUsScreen> {
                     displayFullTextOnTap: true,
                     animatedTexts: [
                       TypewriterAnimatedText(
-                        cursor: '',
-                        speed: Duration(milliseconds: 20),
+                          cursor: '',
+                          speed: Duration(milliseconds: 20),
                           'Our firm is built on trust, expertise, and innovation. We prioritize personalized service, delivering tailored solutions that align with your specific needs and long-term goals. Whether you’re a business owner focused on tax optimization, an investor seeking strategic insight, or an individual looking for expert guidance, we’re here to help you make informed, confident decisions.',
                           textStyle: TextStyle(
                             fontSize: size.width / 100.488,
@@ -338,30 +321,31 @@ class _DaboutUsScreenState extends State<DaboutUsScreen> {
               height: size.width / 23.51,
             ),
             VisibilityDetector(
-      key: const Key('animated-image'),
-      onVisibilityChanged: (visibilityInfo) {
-        if (visibilityInfo.visibleFraction > 0.2 && !_isVisible) {
-          setState(() {
-            _isVisible = true;
-          },
-          );
-        }
-      },
-      child: AnimatedOpacity(
-        duration: const Duration(milliseconds: 800),
-        opacity: _isVisible ? 1.0 : 0.0,
-        child: AnimatedScale(
-          duration: const Duration(milliseconds: 800),
-          scale: _isVisible ? 1.0 : 0.8,
-          child: Image.asset(
-            'assets/images/space.png',
-            width: size.width / 1.188,
-            height: size.width / 2.23,
-            fit: BoxFit.cover,
-          ),
-        ),
-      ),
-    ),
+              key: const Key('animated-image'),
+              onVisibilityChanged: (visibilityInfo) {
+                if (visibilityInfo.visibleFraction > 0.2 && !_isVisible) {
+                  setState(
+                    () {
+                      _isVisible = true;
+                    },
+                  );
+                }
+              },
+              child: AnimatedOpacity(
+                duration: const Duration(milliseconds: 800),
+                opacity: _isVisible ? 1.0 : 0.0,
+                child: AnimatedScale(
+                  duration: const Duration(milliseconds: 800),
+                  scale: _isVisible ? 1.0 : 0.8,
+                  child: Image.asset(
+                    'assets/images/space.png',
+                    width: size.width / 1.188,
+                    height: size.width / 2.23,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
             SizedBox(
               height: size.width / 9.05,
             ),

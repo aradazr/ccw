@@ -1,10 +1,9 @@
 import 'dart:async';
 import 'package:ccw/constans/my_color.dart';
 import 'package:ccw/constans/responsive_utiles.dart';
-import 'package:ccw/screens/desktop/dhome_screen.dart';
-import 'package:ccw/screens/mobile/mhome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -61,14 +60,7 @@ class _SplashScreenState extends State<SplashScreen> {
     bool connected = connectivityResult != ConnectivityResult.none;
 
     if (connected) {
-      double width = MediaQuery.of(context).size.width;
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) =>
-              width >= 650 ? const DhomeScreen() : const MhomeScreen(),
-        ),
-      );
+      context.go('/home');
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(

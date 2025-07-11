@@ -77,15 +77,7 @@ class _MmeetOurExpertScreenState extends State<MmeetOurExpertScreen> {
               child: Stack(
                 alignment: Alignment.topCenter,
                 children: [
-                  Positioned(
-                    top: -ResponsiveMobileUtils.getResponsiveSize(context, 400),
-                    child: Image.asset(
-                      'assets/images/greenBlur2.png',
-                      height: ResponsiveMobileUtils.getResponsiveSize(context, 1000),
-                      width: ResponsiveMobileUtils.getResponsiveSize(context, 1200),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                  
                   MobileAppBar(),
                   Positioned(
                     top: ResponsiveMobileUtils.getResponsiveSize(context, 88),

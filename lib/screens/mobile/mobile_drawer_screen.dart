@@ -1,13 +1,8 @@
 import 'package:ccw/constans/my_color.dart';
 import 'package:ccw/constans/responsive_utiles.dart';
-import 'package:ccw/screens/mobile/mabout_us_screen.dart';
-import 'package:ccw/screens/mobile/mcontact_us_screen.dart';
-import 'package:ccw/screens/mobile/mhome_screen.dart';
-import 'package:ccw/screens/mobile/mrecources_screen.dart';
-import 'package:ccw/screens/mobile/mservices_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-
+import 'package:go_router/go_router.dart';
 
 class MdrawerScreen extends StatelessWidget {
   const MdrawerScreen({super.key});
@@ -37,11 +32,12 @@ class MdrawerScreen extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
                 GestureDetector(
-                  onTap: () => Navigator.pop(context),
+                  onTap: () => context.go('/home'),
                   child: Image.asset(
                     'assets/images/closeDrawer.png',
                     width: ResponsiveMobileUtils.getResponsiveSize(context, 30),
-                    height: ResponsiveMobileUtils.getResponsiveSize(context, 30),
+                    height:
+                        ResponsiveMobileUtils.getResponsiveSize(context, 30),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -55,12 +51,7 @@ class MdrawerScreen extends StatelessWidget {
                     width:
                         ResponsiveMobileUtils.getResponsiveSize(context, 402)),
                 GestureDetector(
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const MhomeScreen(),
-                    ),
-                  ),
+                  onTap: () => context.go('/home'),
                   child: Text(
                     'Home',
                     style: TextStyle(
@@ -72,12 +63,7 @@ class MdrawerScreen extends StatelessWidget {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const MaboutUsScreen(),
-                    ),
-                  ),
+                  onTap: () => context.go('/about-us'),
                   child: Text(
                     'About Us',
                     style: TextStyle(
@@ -89,12 +75,7 @@ class MdrawerScreen extends StatelessWidget {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const MservicesScreen(),
-                    ),
-                  ),
+                  onTap: () => context.go('/services'),
                   child: Text(
                     'Services',
                     style: TextStyle(
@@ -106,12 +87,7 @@ class MdrawerScreen extends StatelessWidget {
                   ),
                 ),
                 GestureDetector(
-                   onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>  MrecourcesScreen(),
-                    ),
-                  ),
+                  onTap: () => context.go('/resources'),
                   child: Text(
                     'Resources',
                     style: TextStyle(
@@ -123,12 +99,7 @@ class MdrawerScreen extends StatelessWidget {
                   ),
                 ),
                 GestureDetector(
-                   onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const McontactUsScreen(),
-                    ),
-                  ),
+                  onTap: () => context.go('/contact-us'),
                   child: Text(
                     'Contact US',
                     style: TextStyle(
@@ -141,8 +112,8 @@ class MdrawerScreen extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () async {
-                    final Uri url = Uri.parse(
-                        'https://ccw.myonlinebookkeeping.com');
+                    final Uri url =
+                        Uri.parse('https://ccw.myonlinebookkeeping.com');
                     if (!await launchUrl(url)) {
                       throw Exception('Could not launch');
                     }

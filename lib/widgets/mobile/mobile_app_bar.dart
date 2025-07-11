@@ -1,6 +1,6 @@
 import 'package:ccw/constans/responsive_utiles.dart';
-import 'package:ccw/screens/mobile/mobile_drawer_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class MobileAppBar extends StatelessWidget {
   const MobileAppBar({
@@ -25,12 +25,8 @@ class MobileAppBar extends StatelessWidget {
           SizedBox(
             width: ResponsiveMobileUtils.getResponsiveSize(context, 265.97),
           ),
-          GestureDetector(
-            onTap: () {
-               Navigator.push(context, MaterialPageRoute(
-                builder: (context) => const MdrawerScreen(),
-              ));
-            },
+                      GestureDetector(
+            onTap: () => context.go('/mobile-drawer'),
             child: Image.asset(
               'assets/images/menu.png',
               width: ResponsiveMobileUtils.getResponsiveSize(context, 24),

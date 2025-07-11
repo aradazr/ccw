@@ -1,7 +1,4 @@
 import 'package:ccw/constans/my_color.dart';
-import 'package:ccw/screens/desktop/dabout_us_screen.dart';
-import 'package:ccw/screens/desktop/dcontact_us_screen.dart';
-import 'package:ccw/screens/desktop/dservices_screen.dart';
 import 'package:ccw/widgets/desktop/app_bar.dart';
 import 'package:ccw/widgets/desktop/footer.dart';
 import 'package:ccw/widgets/desktop/home_three_container.dart';
@@ -10,6 +7,7 @@ import 'package:ccw/widgets/desktop/why_choose_ccw.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:visibility_detector/visibility_detector.dart';
+import 'package:go_router/go_router.dart';
 
 class DhomeScreen extends StatefulWidget {
   const DhomeScreen({super.key});
@@ -101,11 +99,7 @@ class _DhomeScreenState extends State<DhomeScreen> {
                           spacing: size.width / 57.6,
                           children: [
                             GestureDetector(
-                              onTap: () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => DcontactUsScreen(),
-                                  )),
+                              onTap: () => context.go('/contact-us'),
                               child: Container(
                                   alignment: Alignment.center,
                                   height: size.width / 25.71,
@@ -123,11 +117,7 @@ class _DhomeScreenState extends State<DhomeScreen> {
                                   )),
                             ),
                             GestureDetector(
-                              onTap: () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => DaboutUsScreen(),
-                                  )),
+                              onTap: () => context.go('/about-us'),
                               child: Container(
                                   alignment: Alignment.center,
                                   height: size.width / 25.71,
@@ -147,11 +137,7 @@ class _DhomeScreenState extends State<DhomeScreen> {
                                   )),
                             ),
                             GestureDetector(
-                              onTap: () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => DservicesScreen(),
-                                  )),
+                              onTap: () => context.go('/services'),
                               child: Container(
                                   alignment: Alignment.center,
                                   height: size.width / 25.71,

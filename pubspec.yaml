@@ -1,5 +1,5 @@
 name: ccw
-description: "CCW CPA is a professional accounting firm with a reputation for excellence"
+description: "CCW CPA - Chartered Professional Accountants is a professional accounting firm with a reputation for excellence"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -50,6 +50,7 @@ dependencies:
   webview_flutter_web: ^0.2.2+3
   intl: ^0.20.2
   flutter_recaptcha_v2_compat: ^1.0.3+3
+  go_router: ^14.6.2
 
 
 dev_dependencies:
